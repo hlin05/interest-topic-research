@@ -19,6 +19,7 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
   - [Surveys](#surveys)
   - [Foundation Models for ML](#foundation-models-for-ml)
 - [Datasets & Benchmarks](#datasets--benchmarks)
+- [MLE-bench Leaderboard](#mle-bench-leaderboard)
 - [Related Resources](#related-resources)
 - [Contributing](#contributing)
 
@@ -87,6 +88,9 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 
 - **DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation** (2022) - [Paper](https://arxiv.org/abs/2211.11501)
   1,000 data science problems from StackOverflow covering NumPy, Pandas, SciPy, Scikit-learn, Matplotlib, PyTorch, and TensorFlow.
+
+- **MLE-Dojo: Interactive RL Environment for Machine Learning Engineering** (2025) - [Paper](https://arxiv.org/abs/2505.07782)
+  Transforms MLE-bench into a Gym-style RL environment with 200+ Kaggle competitions, enabling agent training via supervised fine-tuning and reinforcement learning.
 
 ### Multi-Agent Systems
 
@@ -207,9 +211,41 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 | GAIA | General AI Assistants benchmark testing real-world reasoning and tool use. | [Paper](https://arxiv.org/abs/2311.12983) |
 | LMR-BENCH | Benchmark tasking agents with reproducing functions from NLP research papers. | [Paper](https://aclanthology.org/2025.emnlp-main.314/) |
 | MLE-bench | Kaggle-based benchmark for ML engineering agents by OpenAI. 75 competitions. | [Paper](https://arxiv.org/abs/2410.07095) \| [GitHub](https://github.com/openai/mle-bench) |
+| MLE-Dojo | Gym-style RL environment built on MLE-bench with 200+ Kaggle competitions for agent training. | [Paper](https://arxiv.org/abs/2505.07782) |
 | MLE-Smith | Automated pipeline for generating competition-style MLE challenges from raw datasets. | [Paper](https://arxiv.org/abs/2510.07307) |
 | MLAgentBench | Benchmark for LLM agents on ML experimentation tasks. | [Paper](https://openreview.net/forum?id=1Fs1LvjYQW) |
 | MLR-Bench | Open-ended ML research benchmark with 201 tasks from major ML conferences. | [Paper](https://arxiv.org/abs/2505.19955) |
+
+---
+
+## MLE-bench Leaderboard
+
+*Top-performing agents on [MLE-bench](https://github.com/openai/mle-bench) (75 Kaggle competitions, ICLR 2025 Oral). Scored by "Any Medal %" — percentage of competitions earning at least a bronze medal. Agents run on 36 vCPUs, 440GB RAM, and one 24GB A10 GPU.*
+
+| Rank | Agent | LLM | All (%) | Hours | Date |
+|------|-------|-----|---------|-------|------|
+| 1 | PiEvolve (Fractal AI) | Gemini-3-Pro-Preview | 61.33 | 24 | Jan 2026 |
+| 2 | Famou-Agent 2.0 (Baidu) | Gemini-2.5-Pro | 59.56 | 24 | Dec 2025 |
+| 3 | ML-Master 2.0 (SJTU) | DeepSeek-V3.2 | 56.44 | 24 | Dec 2025 |
+| 4 | PiEvolve Fast (Fractal AI) | Gemini-3-Pro-Preview | 52.00 | 12 | Jan 2026 |
+| 5 | Leeroo | Gemini-3-Pro-Preview | 50.67 | 24 | Dec 2025 |
+| 6 | Thesis | gpt-5-codex | 48.44 | 24 | Nov 2025 |
+| 7 | CAIR MLE-STAR-Pro-1.5 | Gemini-2.5-Pro | 44.00 | 24 | Nov 2025 |
+| 8 | Famou-Agent (Baidu) | Gemini-2.5-Pro | 43.56 | 24 | Oct 2025 |
+| 9 | Operand ensemble | gpt-5 + multi-model | 39.56 | 24 | Oct 2025 |
+| 10 | CAIR MLE-STAR-Pro-1.0 | Gemini-2.5-Pro | 38.67 | 12 | Nov 2025 |
+| 11 | InternAgent | DeepSeek-R1 | 36.44 | 12 | Sep 2025 |
+| 12 | R&D-Agent | gpt-5 | 35.11 | 12 | Sep 2025 |
+| 13 | Neo multi-agent | Undisclosed | 34.22 | 36 | Jul 2025 |
+| 14 | AIRA-dojo (Meta) | o3 | 31.60 | 24 | May 2025 |
+| 15 | R&D-Agent | o3 + GPT-4.1 | 30.22 | 24 | Aug 2025 |
+| 16 | ML-Master (SJTU) | DeepSeek-R1 | 29.33 | 12 | Jun 2025 |
+| 17 | R&D-Agent | o1-preview | 22.40 | 24 | May 2025 |
+| 18 | AIDE | o1-preview | 17.12 | 24 | Oct 2024 |
+| 19 | AIDE | gpt-4o | 8.63 | 24 | Oct 2024 |
+| 20 | OpenHands | gpt-4o | 4.89 | 24 | Oct 2024 |
+
+*Top score improved from 16.9% (Oct 2024) to 61.3% (Jan 2026) — a ~3.6x improvement in 15 months. See [MLE-bench README](https://github.com/openai/mle-bench) for the full leaderboard with per-difficulty breakdowns.*
 
 ---
 
