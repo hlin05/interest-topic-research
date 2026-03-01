@@ -12,6 +12,7 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 - [AutoML Agents](#automl-agents)
 - [Research Papers](#research-papers)
   - [Benchmarks & Evaluation](#benchmarks--evaluation)
+  - [Autonomous Data Science Agents](#autonomous-data-science-agents)
   - [Multi-Agent Systems](#multi-agent-systems)
   - [Search & Planning Methods](#search--planning-methods)
   - [Domain-Specific Agentic ML](#domain-specific-agentic-ml)
@@ -31,9 +32,12 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 
 | Project | Description | Stars |
 |---------|-------------|-------|
+| [AlphaEvolve](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/) | Google DeepMind's evolutionary coding agent for scientific and algorithmic discovery using Gemini. | - |
 | [AutoGluon](https://github.com/autogluon/autogluon) | Open-source AutoML toolkit by Amazon with foundational models and LLM agents. | ![GitHub stars](https://img.shields.io/github/stars/autogluon/autogluon?style=flat-square) |
+| [EvoAgentX](https://github.com/EvoAgentX/EvoAgentX) | Open-source framework for building, evaluating, and evolving LLM-based agentic workflows. EMNLP 2025. | ![GitHub stars](https://img.shields.io/github/stars/EvoAgentX/EvoAgentX?style=flat-square) |
 | [Karpathy](https://github.com/K-Dense-AI/karpathy) | Agentic ML Engineer using Claude Code SDK and Google ADK. By K-Dense. | ![GitHub stars](https://img.shields.io/github/stars/K-Dense-AI/karpathy?style=flat-square) |
 | [K-Dense Web](https://k-dense.ai/) | Autonomous AI Scientist platform with dual-loop multi-agent system for research, coding, and ML. | - |
+| [OpenEvolve](https://github.com/codelion/openevolve) | Open-source implementation of Google DeepMind's AlphaEvolve for evolutionary code optimization. | ![GitHub stars](https://img.shields.io/github/stars/codelion/openevolve?style=flat-square) |
 
 ---
 
@@ -43,12 +47,14 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 
 | Project | Description | Stars |
 |---------|-------------|-------|
+| [Agent Laboratory](https://github.com/SamuelSchmidgall/AgentLaboratory) | Autonomous research framework with specialized agents for literature review, experimentation, and report writing. | ![GitHub stars](https://img.shields.io/github/stars/SamuelSchmidgall/AgentLaboratory?style=flat-square) |
 | [AIDE](https://github.com/WecoAI/aideml) | AI-powered data science agent using tree search for solution exploration. | ![GitHub stars](https://img.shields.io/github/stars/WecoAI/aideml?style=flat-square) |
 | [AIRA-dojo](https://github.com/facebookresearch/aira-dojo) | Meta's AI research agents using search policies (Greedy, MCTS, Evolutionary). | ![GitHub stars](https://img.shields.io/github/stars/facebookresearch/aira-dojo?style=flat-square) |
 | [AutoGluon Assistant](https://github.com/autogluon/autogluon-assistant) | Multi-agent system for end-to-end multimodal ML automation. Also known as MLZero. | ![GitHub stars](https://img.shields.io/github/stars/autogluon/autogluon-assistant?style=flat-square) |
 | [AutoMind](https://github.com/zjunlp/AutoMind) | Adaptive agent with expert knowledge base from 455 Kaggle competitions and tree search. By ZJU NLP. | ![GitHub stars](https://img.shields.io/github/stars/zjunlp/AutoMind?style=flat-square) |
 | [AutoML-Agent](https://github.com/DeepAuto-AI/automl-agent) | Multi-Agent LLM Framework for Full-Pipeline AutoML. | ![GitHub stars](https://img.shields.io/github/stars/DeepAuto-AI/automl-agent?style=flat-square) |
 | [Data Interpreter](https://github.com/geekan/MetaGPT) | LLM agent for data science using hierarchical graph modeling and programmable node generation. Part of MetaGPT. ICLR 2025. | ![GitHub stars](https://img.shields.io/github/stars/geekan/MetaGPT?style=flat-square) |
+| [DS-Agent](https://github.com/guosyjlu/DS-Agent) | Automated data science agent using case-based reasoning from Kaggle. ICML 2024. | ![GitHub stars](https://img.shields.io/github/stars/guosyjlu/DS-Agent?style=flat-square) |
 | [FM Agent](https://github.com/baidubce/FM-Agent) | Baidu's foundation model agent for ML engineering tasks. | ![GitHub stars](https://img.shields.io/github/stars/baidubce/FM-Agent?style=flat-square) |
 | [InternAgent](https://github.com/Alpha-Innovator/InternAgent) | ML engineering agent with DeepSeek-R1 integration. | ![GitHub stars](https://img.shields.io/github/stars/Alpha-Innovator/InternAgent?style=flat-square) |
 | [LADS (LightAutoDS)](https://github.com/sb-ai-lab/LADS) | Multi-AutoML agentic system combining LLM code generation with AutoGluon, LightAutoML, and FEDOT. | ![GitHub stars](https://img.shields.io/github/stars/sb-ai-lab/LADS?style=flat-square) |
@@ -92,6 +98,16 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 - **MLE-Dojo: Interactive RL Environment for Machine Learning Engineering** (2025) - [Paper](https://arxiv.org/abs/2505.07782)
   Transforms MLE-bench into a Gym-style RL environment with 200+ Kaggle competitions, enabling agent training via supervised fine-tuning and reinforcement learning.
 
+### Autonomous Data Science Agents
+
+*LLM agents for end-to-end data science automation with case-based reasoning and knowledge retrieval.*
+
+- **DS-Agent: Automated Data Science by Empowering LLMs with Case-Based Reasoning** (ICML 2024) - [Paper](https://arxiv.org/abs/2402.17453) | [Code](https://github.com/guosyjlu/DS-Agent)
+  Two-stage framework (development + deployment) using case-based reasoning from Kaggle. GPT-4 achieves 100% success rate in development stage.
+
+- **Agent Laboratory: Using LLM Agents as Research Assistants** (2025) - [Paper](https://arxiv.org/abs/2501.04227) | [Code](https://github.com/SamuelSchmidgall/AgentLaboratory)
+  End-to-end autonomous research framework with specialized agents (PhD, Postdoc, ML Engineer, Professor) for literature review, experimentation, and report writing. 84% cost reduction vs. prior methods.
+
 ### Multi-Agent Systems
 
 *Frameworks using multiple specialized agents for end-to-end ML pipelines.*
@@ -117,6 +133,9 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 - **Data Interpreter: An LLM Agent for Data Science** (ICLR 2025) - [Paper](https://arxiv.org/abs/2402.18679) | [Code](https://github.com/geekan/MetaGPT)
   Hierarchical graph modeling with programmable node generation. Outperforms AutoGen on ML benchmarks.
 
+- **MetaAgent: Automatically Constructing Multi-Agent Systems Based on Finite State Machines** (ICML 2025) - [Paper](https://arxiv.org/abs/2507.22606)
+  FSM-based framework that auto-generates multi-agent systems with state traceback for self-correction. Matches or exceeds human-designed systems.
+
 ### Search & Planning Methods
 
 *Papers using tree search, MCTS, or structured planning for ML workflow optimization.*
@@ -133,10 +152,13 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 - **MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement** (2025) - [Paper](https://arxiv.org/abs/2506.15692) | [Blog](https://research.google/blog/mle-star-a-state-of-the-art-machine-learning-engineering-agents/)  
   Uses web search to retrieve models and targeted code block refinement via ablation studies.
 
-- **ML-Master: Towards AI-for-AI via Integration of Exploration and Reasoning** (2025) - [Paper](https://arxiv.org/abs/2506.16499) | [Code](https://github.com/sjtu-sai-agents/ML-Master)  
+- **ML-Master: Towards AI-for-AI via Integration of Exploration and Reasoning** (2025) - [Paper](https://arxiv.org/abs/2506.16499) | [Code](https://github.com/sjtu-sai-agents/ML-Master)
   Integrates exploration and reasoning with adaptive memory mechanism.
 
-- **PiML: Automated Machine Learning Workflow Optimization using LLM Agents** (AutoML 2025) - [Paper](https://openreview.net/forum?id=Nw1qBpsjZz)  
+- **ML-Master 2.0: Toward Ultra-Long-Horizon Agentic Science** (2026) - [Paper](https://arxiv.org/abs/2601.10402) | [Code](https://github.com/sjtu-sai-agents/ML-Master)
+  Hierarchical Cognitive Caching (HCC) for ultra-long-horizon ML engineering. Achieves 56.44% on MLE-bench via cognitive accumulation across 24-hour runs.
+
+- **PiML: Automated Machine Learning Workflow Optimization using LLM Agents** (AutoML 2025) - [Paper](https://openreview.net/forum?id=Nw1qBpsjZz)
   Persistent iterative framework with adaptive memory and systematic debugging.
 
 - **SELA: Tree-Search Enhanced LLM Agents for Automated Machine Learning** (2024) - [Paper](https://arxiv.org/abs/2410.17238) | [Code](https://github.com/geekan/MetaGPT/tree/main/metagpt/ext/sela)  
@@ -146,7 +168,10 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 
 *Agentic systems tailored for specific ML domains.*
 
-- **AgenticSciML: Collaborative Multi-Agent Systems for Emergent Discovery in Scientific ML** (2025) - [Paper](https://arxiv.org/abs/2511.07262)  
+- **AlphaEvolve: A Coding Agent for Scientific and Algorithmic Discovery** (2025) - [Paper](https://arxiv.org/abs/2506.13131) | [Blog](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)
+  Google DeepMind's evolutionary coding agent pairing Gemini LLMs with automated evaluators. Discovered novel matrix multiplication algorithms and optimizes data center operations.
+
+- **AgenticSciML: Collaborative Multi-Agent Systems for Emergent Discovery in Scientific ML** (2025) - [Paper](https://arxiv.org/abs/2511.07262)
   Specialized agents propose, critique, and refine SciML solutions.
 
 - **AI-Driven Automation Can Become the Foundation of Next-Era Science of Science Research** (NeurIPS 2025 Position) - [Paper](https://openreview.net/forum?id=u0FB996GIH)  
@@ -174,6 +199,9 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 - **CAAFE: Context-Aware Automated Feature Engineering** (NeurIPS 2024) - [Paper](https://arxiv.org/abs/2305.03403)
   LLM-driven automated feature engineering pipeline that generates and executes code for new features using dataset context.
 
+- **LLM-FE: Automated Feature Engineering for Tabular Data with LLMs as Evolutionary Optimizers** (2025) - [Paper](https://arxiv.org/abs/2503.14434) | [Code](https://github.com/nikhilsab/LLMFE)
+  Combines evolutionary search with LLM reasoning to discover effective feature transformations. Outperforms CAAFE and other baselines on classification and regression benchmarks.
+
 - **A Human-Centered Automated Machine Learning Agent with LLMs** (2025) - [Paper](https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1680845/full)
   LLM-driven agent enabling natural language interaction throughout the entire ML workflow with adaptive hyperparameter optimization.
 
@@ -186,6 +214,21 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 
 - **Large Language Model-based Data Science Agent: A Survey** (2025) - [Paper](https://arxiv.org/abs/2508.02744)
   Comprehensive survey examining how LLM-agent systems automate end-to-end data science pipelines.
+
+- **A Survey on Large Language Model-based Agents for Statistics and Data Science** (The American Statistician, 2025) - [Paper](https://www.tandfonline.com/doi/full/10.1080/00031305.2025.2561140)
+  Overview of evolution, capabilities, and applications of LLM-based data agents for simplifying complex data tasks.
+
+- **Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions** (2025) - [Paper](https://arxiv.org/abs/2503.08979)
+  Categorizes agentic systems for scientific discovery into autonomous and collaborative frameworks across chemistry, biology, and materials science.
+
+- **From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery** (2025) - [Paper](https://arxiv.org/abs/2508.14111)
+  Domain-oriented review unifying process-oriented, autonomy-oriented, and mechanism-oriented perspectives on autonomous scientific discovery.
+
+- **From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery** (2025) - [Paper](https://arxiv.org/abs/2505.13259)
+  Analyzes LLM progression from discrete task-oriented functions to sophisticated multi-stage agentic workflows across six stages of the scientific method.
+
+- **A Comprehensive Survey of Self-Evolving AI Agents** (2025) - [Paper](https://arxiv.org/abs/2508.07407) | [Code](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents)
+  Survey on agent evolution techniques that automatically enhance agent systems, bridging foundation models with continuous adaptability.
 
 ### Foundation Models for ML
 
@@ -258,6 +301,8 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 | [LLM4AutoML](https://github.com/t-harden/LLM4AutoML) | Curated list of papers on using LLMs for AutoML. | ![GitHub stars](https://img.shields.io/github/stars/t-harden/LLM4AutoML?style=flat-square) |
 | [LLM-Based Data Science Agent Reading List](https://github.com/Stephen-SMJ/Reading-List-of-Large-Language-Model-Based-Data-Science-Agent) | Reading list of papers on LLM-based data science agents. | ![GitHub stars](https://img.shields.io/github/stars/Stephen-SMJ/Reading-List-of-Large-Language-Model-Based-Data-Science-Agent?style=flat-square) |
 | [ai-agent-papers](https://github.com/masamasa59/ai-agent-papers) | Biweekly-updated collection of AI agent research papers. | ![GitHub stars](https://img.shields.io/github/stars/masamasa59/ai-agent-papers?style=flat-square) |
+| [Awesome-Self-Evolving-Agents](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) | Survey and paper list on self-evolving AI agents bridging foundation models and lifelong systems. | ![GitHub stars](https://img.shields.io/github/stars/EvoAgentX/Awesome-Self-Evolving-Agents?style=flat-square) |
+| [Awesome-Agent-Papers](https://github.com/luo-junyu/Awesome-Agent-Papers) | Up-to-date survey on LLM agent methodology, applications, and challenges. | ![GitHub stars](https://img.shields.io/github/stars/luo-junyu/Awesome-Agent-Papers?style=flat-square) |
 
 ---
 
