@@ -254,7 +254,6 @@ jobs:
           prompt-file: codex-weekly-prompt.md
           output-file: weekly-suggestions.md
           sandbox: read-only
-          codex-args: '["-a", "never"]'
 
       - name: Check if suggestions were found
         id: decision
