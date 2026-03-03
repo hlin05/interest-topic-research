@@ -1,0 +1,234 @@
+name: Weekly Resource Research
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs every Monday at 14:00 UTC.
+    - cron: "0 14 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verify OpenAI API key is configured
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "Missing repository secret: OPENAI_API_KEY"
+            exit 1
+          fi
+
+      - name: Verify xAI API key is configured
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+        run: |
+          if [ -z "$XAI_API_KEY" ]; then
+            echo "Missing repository secret: XAI_API_KEY"
+            exit 1
+          fi
+
+      - name: Collect Grok social signals
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          XAI_BASE_URL: ${{ vars.XAI_BASE_URL }}
+          GROK_MODEL: ${{ vars.GROK_MODEL }}
+        run: |
+          python3 - <<'PY'
+          import datetime as dt
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+
+          base_url = (os.getenv("XAI_BASE_URL") or "https://api.x.ai").rstrip("/")
+          api_key = os.environ["XAI_API_KEY"]
+          requested_model = (os.getenv("GROK_MODEL") or "").strip()
+
+          headers = {
+              "Authorization": f"Bearer {api_key}",
+              "Content-Type": "application/json",
+          }
+
+          def request_json(method, path, payload=None):
+              body = None
+              if payload is not None:
+                  body = json.dumps(payload).encode("utf-8")
+              req = urllib.request.Request(
+                  url=f"{base_url}{path}",
+                  method=method,
+                  headers=headers,
+                  data=body,
+              )
+              with urllib.request.urlopen(req, timeout=45) as resp:
+                  return json.loads(resp.read().decode("utf-8"))
+
+          def pick_model():
+              if requested_model:
+                  return requested_model
+              payload = request_json("GET", "/v1/language-models")
+              for item in payload.get("data", []):
+                  model_id = (item.get("id") or "").strip()
+                  if model_id.startswith("grok"):
+                      return model_id
+              for item in payload.get("data", []):
+                  model_id = (item.get("id") or "").strip()
+                  if model_id:
+                      return model_id
+              return "grok-4"
+
+          def extract_text(response_payload):
+              choices = response_payload.get("choices", [])
+              if not choices:
+                  return ""
+              content = choices[0].get("message", {}).get("content", "")
+              if isinstance(content, str):
+                  return content.strip()
+              if isinstance(content, list):
+                  chunks = []
+                  for part in content:
+                      if isinstance(part, dict) and part.get("text"):
+                          chunks.append(str(part["text"]))
+                  return "\n".join(chunks).strip()
+              return ""
+
+          model = pick_model()
+          prompt = (
+              "Find very recent (last 14 days) high-signal resources for an awesome list about "
+              "agentic machine learning. Prioritize resources that received notable social discussion "
+              "(for example on X/Twitter), and include only items with verifiable public URLs. "
+              "Return markdown starting with '## Grok Social Signals' and then up to 10 bullets. "
+              "Each bullet format: - [Title](URL) - one-line relevance note."
+          )
+
+          output_lines = [
+              f"# Grok Scout ({dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d')})",
+              "",
+              f"- Model: `{model}`",
+              "",
+          ]
+
+          try:
+              response = request_json(
+                  "POST",
+                  "/v1/chat/completions",
+                  {
+                      "model": model,
+                      "messages": [
+                          {"role": "system", "content": "You are a concise ML research scout."},
+                          {"role": "user", "content": prompt},
+                      ],
+                      "temperature": 0.2,
+                  },
+              )
+              text = extract_text(response)
+              if not text:
+                  text = "## Grok Social Signals\n\n- No usable signals returned."
+              output_lines.append(text)
+          except Exception as exc:
+              output_lines.append("## Grok Social Signals")
+              output_lines.append("")
+              output_lines.append(f"- Grok query failed: `{exc}`")
+              output_lines.append("- Continue with web/RSS-only scan for this run.")
+
+          with open("grok-social-signals.md", "w", encoding="utf-8") as handle:
+              handle.write("\n".join(output_lines).strip() + "\n")
+          PY
+
+      - name: Generate weekly suggestions with Codex CLI
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cat > codex-weekly-prompt.md <<'EOF'
+          You are curating an awesome list for agentic machine learning.
+
+          Task:
+          1) Read README.md in this repository.
+          2) Use the Grok social scout context from `grok-social-signals.md`.
+          3) Research NEW resources from the last 7-14 days using both:
+             - web search
+             - RSS feeds, including at least one arXiv AI/ML feed
+          4) Cross-check Grok hints against reliable links and avoid unverified claims.
+          5) Propose only high-signal items that are NOT already present in README.md.
+          6) Suggest where each item should go in README sections.
+          7) It is completely acceptable to recommend zero additions this week.
+             Do not force suggestions when quality is low or novelty is weak.
+
+          Output rules:
+          - First line MUST be exactly one of:
+            RESULT: NONE
+            RESULT: FOUND
+          - If RESULT: NONE, add one short sentence explaining why no additions are needed.
+          - If RESULT: FOUND, output concise markdown with:
+            - a short "Scan summary"
+            - up to 8 candidate items total
+            - for each item: title, URL, suggested section, and one-line rationale
+          EOF
+
+          {
+            echo
+            echo "Additional context from Grok social scout:"
+            echo
+            cat grok-social-signals.md
+          } >> codex-weekly-prompt.md
+
+          npx @openai/codex -a never --search exec \
+            -C . \
+            -s read-only \
+            --output-last-message weekly-suggestions.md \
+            "$(cat codex-weekly-prompt.md)"
+
+      - name: Check if suggestions were found
+        id: decision
+        run: |
+          first_line="$(sed -n '1p' weekly-suggestions.md | tr -d '\r')"
+          if [ "$first_line" = "RESULT: FOUND" ]; then
+            echo "has_suggestions=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_suggestions=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Prepare draft PR content
+        id: prepare
+        if: steps.decision.outputs.has_suggestions == 'true'
+        run: |
+          SUGGESTION_DATE="$(date -u +'%Y-%m-%d')"
+          mkdir -p .github/research-suggestions
+          tail -n +2 weekly-suggestions.md > ".github/research-suggestions/${SUGGESTION_DATE}.md"
+          echo "suggestion_date=${SUGGESTION_DATE}" >> "$GITHUB_OUTPUT"
+
+      - name: Create draft pull request
+        if: steps.decision.outputs.has_suggestions == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: weekly resource suggestions (${{ steps.prepare.outputs.suggestion_date }})"
+          branch: "automation/weekly-resource-suggestions-${{ github.run_id }}"
+          delete-branch: true
+          title: "chore: weekly resource suggestions (${{ steps.prepare.outputs.suggestion_date }})"
+          body: |
+            This draft PR was generated by the weekly Codex research workflow.
+
+            It contains candidate resources for review. Some weeks should produce no PR if there are no high-signal additions.
+
+            Review the file under `.github/research-suggestions/` and add accepted items to `README.md`.
+          draft: true
+          labels: automation,research
+          add-paths: |
+            .github/research-suggestions/${{ steps.prepare.outputs.suggestion_date }}.md
+
+      - name: No suggestions this run
+        if: steps.decision.outputs.has_suggestions == 'false'
+        run: echo "No new suggestions this week."
