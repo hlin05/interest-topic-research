@@ -129,11 +129,15 @@ jobs:
               return "\n".join(chunks).strip()
 
           prompt = (
-              "Find very recent (last 14 days) high-signal resources for an awesome list about "
-              "agentic machine learning. Prioritize resources that received notable social discussion "
-              "(for example on X/Twitter), and include only items with verifiable public URLs. "
+              "Find very recent (last 14 days) leads for AGENTIC ML specifically. Focus on resources "
+              "that automate ML workflows such as data prep, feature engineering, model training, "
+              "evaluation, and experimentation. Exclude generic web/desktop/coding agents unless they "
+              "show clear empirical ML workflow outcomes. Prioritize resources that received notable "
+              "social discussion (for example on X/Twitter), but each item must include a primary "
+              "technical URL (paper/repo/blog) with verifiable public access. "
               "Return markdown starting with '## Grok Social Signals' and then up to 10 bullets. "
-              "Each bullet format: - [Title](URL) - one-line relevance note."
+              "Each bullet format: - [Title](PRIMARY_URL) - one-line relevance note; social evidence: "
+              "SOCIAL_URL or 'n/a'."
           )
 
           for probe_path in ("/v1/models", "/v1/language-models"):
@@ -300,9 +304,18 @@ jobs:
           1) Read README.md in this repository.
           2) Use the Grok social scout context from `grok-social-signals.md`.
           3) Use arXiv RSS context from `arxiv-rss-signals.md`.
-          4) Propose only high-signal items that are NOT already present in README.md.
-          5) Suggest where each item should go in README sections.
-          6) It is completely acceptable to recommend zero additions this week.
+          4) Apply this inclusion checklist (resource should satisfy at least 3 of 4):
+             - goal-directed ML planning
+             - tool-using ML lifecycle execution (data prep/feature engineering/training/evaluation/experimentation)
+             - iterative feedback loop from metrics/errors/results
+             - empirical ML outcome (benchmark/ablation/competition/measurable gain)
+          5) Exclude or deprioritize:
+             - generic web/desktop/coding agents without meaningful ML workflow contribution
+             - social-only announcements lacking a primary technical source (paper/repo/blog)
+             - stale resources unless there is a substantive recent release/update
+          6) Propose only high-signal items that are NOT already present in README.md.
+          7) Suggest where each item should go in README sections.
+          8) It is completely acceptable to recommend zero additions this week.
              Do not force suggestions when quality is low or novelty is weak.
 
           Output rules:
@@ -313,7 +326,7 @@ jobs:
           - If RESULT: FOUND, output concise markdown with:
             - a short "Scan summary"
             - up to 8 candidate items total
-            - for each item: title, URL, suggested section, and one-line rationale
+            - for each item: title, URL, suggested section, one-line rationale, and which checklist criteria it satisfies
           EOF
 
           {

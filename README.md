@@ -6,6 +6,25 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 
 ---
 
+## Scope: What Counts as Agentic ML?
+
+A resource belongs in this list when it demonstrates autonomous, closed-loop progress on machine learning workflows (not just general-purpose agent behavior).
+
+**Inclusion checklist (meet at least 3 of 4):**
+
+- Goal-directed ML planning (selects or revises strategy for an ML objective)
+- Tool-using execution across ML lifecycle stages (data prep, feature engineering, model training, evaluation, experimentation)
+- Iterative feedback loop (uses metrics/errors/results to revise actions)
+- Empirical ML outcome (benchmark, competition result, ablation, or measurable improvement)
+
+**Exclude or deprioritize:**
+
+- Generic web/desktop/coding agents without meaningful ML workflow contribution
+- Social-only announcements without a primary technical source (paper/repo/blog)
+- Stale resources unless there is a substantive new release/update in the recent window
+
+---
+
 ## Contents
 
 - [Frameworks & Platforms](#frameworks--platforms)
@@ -309,6 +328,8 @@ Agentic ML refers to autonomous AI systems that can plan, execute, and iterate o
 ## Contributing
 
 Contributions are welcome! To add a project or paper, simply [open an issue](../../issues) or submit a PR.
+
+When proposing additions, include a short note on which inclusion criteria the item satisfies and link the strongest supporting evidence (paper/repo/benchmark/blog).
 
 ---
 
