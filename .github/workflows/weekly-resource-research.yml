@@ -133,6 +133,84 @@ jobs:
               handle.write("\n".join(output_lines).strip() + "\n")
           PY
 
+      - name: Collect recent arXiv RSS signals
+        run: |
+          python3 - <<'PY'
+          import datetime as dt
+          import html
+          import re
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
+          feeds = [
+              ("cs.AI", "https://rss.arxiv.org/rss/cs.AI"),
+              ("cs.LG", "https://rss.arxiv.org/rss/cs.LG"),
+              ("stat.ML", "https://rss.arxiv.org/rss/stat.ML"),
+          ]
+          cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=14)
+          collected = []
+
+          def clean_text(value):
+              value = html.unescape(value or "")
+              value = re.sub(r"<[^>]+>", " ", value)
+              return " ".join(value.split())
+
+          for feed_name, feed_url in feeds:
+              try:
+                  with urllib.request.urlopen(feed_url, timeout=30) as resp:
+                      xml_text = resp.read().decode("utf-8", errors="replace")
+                  root = ET.fromstring(xml_text)
+              except Exception as exc:
+                  collected.append((feed_name, None, None, f"Feed fetch failed: {exc}"))
+                  continue
+
+              channel = root.find("channel")
+              if channel is None:
+                  collected.append((feed_name, None, None, "Missing RSS channel data"))
+                  continue
+
+              for item in channel.findall("item"):
+                  title = clean_text(item.findtext("title", default=""))
+                  link = clean_text(item.findtext("link", default=""))
+                  pub_raw = clean_text(item.findtext("pubDate", default=""))
+                  if not title or not link:
+                      continue
+                  try:
+                      published = dt.datetime.strptime(
+                          pub_raw, "%a, %d %b %Y %H:%M:%S %z"
+                      )
+                  except Exception:
+                      published = None
+                  if published is None or published < cutoff:
+                      continue
+                  collected.append((feed_name, title, link, published.isoformat()))
+                  if sum(1 for item in collected if item[1]) >= 18:
+                      break
+              if sum(1 for item in collected if item[1]) >= 18:
+                  break
+
+          lines = [
+              f"# arXiv RSS Scout ({dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d')})",
+              "",
+              "Recent papers from arXiv category RSS feeds (last 14 days).",
+              "",
+          ]
+
+          has_items = False
+          for source, title, link, extra in collected:
+              if title and link:
+                  has_items = True
+                  lines.append(f"- [{title}]({link}) ({source})")
+              elif extra:
+                  lines.append(f"- {source}: {extra}")
+
+          if not has_items:
+              lines.append("- No recent arXiv items found from configured feeds.")
+
+          with open("arxiv-rss-signals.md", "w", encoding="utf-8") as handle:
+              handle.write("\n".join(lines).strip() + "\n")
+          PY
+
       - name: Build Codex prompt
         run: |
           cat > codex-weekly-prompt.md <<'EOF'
@@ -141,13 +219,10 @@ jobs:
           Task:
           1) Read README.md in this repository.
           2) Use the Grok social scout context from `grok-social-signals.md`.
-          3) Research NEW resources from the last 7-14 days using both:
-             - web search
-             - RSS feeds, including at least one arXiv AI/ML feed
-          4) Cross-check Grok hints against reliable links and avoid unverified claims.
-          5) Propose only high-signal items that are NOT already present in README.md.
-          6) Suggest where each item should go in README sections.
-          7) It is completely acceptable to recommend zero additions this week.
+          3) Use arXiv RSS context from `arxiv-rss-signals.md`.
+          4) Propose only high-signal items that are NOT already present in README.md.
+          5) Suggest where each item should go in README sections.
+          6) It is completely acceptable to recommend zero additions this week.
              Do not force suggestions when quality is low or novelty is weak.
 
           Output rules:
@@ -166,6 +241,10 @@ jobs:
             echo "Additional context from Grok social scout:"
             echo
             cat grok-social-signals.md
+            echo
+            echo "Additional context from arXiv RSS scout:"
+            echo
+            cat arxiv-rss-signals.md
           } >> codex-weekly-prompt.md
 
       - name: Generate weekly suggestions with Codex CLI
@@ -175,7 +254,7 @@ jobs:
           prompt-file: codex-weekly-prompt.md
           output-file: weekly-suggestions.md
           sandbox: read-only
-          codex-args: '["--search", "-a", "never"]'
+          codex-args: '["-a", "never"]'
 
       - name: Check if suggestions were found
         id: decision
