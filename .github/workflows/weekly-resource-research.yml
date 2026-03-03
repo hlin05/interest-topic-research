@@ -50,19 +50,30 @@ jobs:
           import datetime as dt
           import json
           import os
+          import sys
           import urllib.error
           import urllib.request
 
           base_url = (os.getenv("XAI_BASE_URL") or "https://api.x.ai").rstrip("/")
           api_key = os.environ["XAI_API_KEY"]
           requested_model = (os.getenv("GROK_MODEL") or "").strip()
+          model = requested_model or "grok-4-1-fast-reasoning"
 
           headers = {
               "Authorization": f"Bearer {api_key}",
               "Content-Type": "application/json",
+              "Accept": "application/json",
+              "User-Agent": "weekly-resource-research/1.0",
           }
 
-          def request_json(method, path, payload=None):
+          debug = {
+              "timestamp": dt.datetime.now(dt.timezone.utc).isoformat(),
+              "base_url": base_url,
+              "model": model,
+              "attempts": [],
+          }
+
+          def request_raw(method, path, payload=None):
               body = None
               if payload is not None:
                   body = json.dumps(payload).encode("utf-8")
@@ -72,10 +83,21 @@ jobs:
                   headers=headers,
                   data=body,
               )
-              with urllib.request.urlopen(req, timeout=45) as resp:
-                  return json.loads(resp.read().decode("utf-8"))
+              try:
+                  with urllib.request.urlopen(req, timeout=45) as resp:
+                      return resp.status, resp.read().decode("utf-8", errors="replace")
+              except urllib.error.HTTPError as err:
+                  return err.code, err.read().decode("utf-8", errors="replace")
+              except urllib.error.URLError as err:
+                  return None, str(err)
 
-          def extract_text(response_payload):
+          def decode_json(raw_text):
+              try:
+                  return json.loads(raw_text)
+              except json.JSONDecodeError:
+                  return None
+
+          def extract_chat_text(response_payload):
               choices = response_payload.get("choices", [])
               if not choices:
                   return ""
@@ -90,7 +112,22 @@ jobs:
                   return "\n".join(chunks).strip()
               return ""
 
-          model = requested_model or "grok-4-1-fast-reasoning"
+          def extract_responses_text(response_payload):
+              direct = str(response_payload.get("output_text") or "").strip()
+              if direct:
+                  return direct
+              chunks = []
+              for item in response_payload.get("output", []):
+                  if item.get("type") != "message":
+                      continue
+                  for part in item.get("content", []):
+                      part_type = part.get("type")
+                      if part_type in ("output_text", "text"):
+                          text_value = str(part.get("text") or "").strip()
+                          if text_value:
+                              chunks.append(text_value)
+              return "\n".join(chunks).strip()
+
           prompt = (
               "Find very recent (last 14 days) high-signal resources for an awesome list about "
               "agentic machine learning. Prioritize resources that received notable social discussion "
@@ -99,38 +136,81 @@ jobs:
               "Each bullet format: - [Title](URL) - one-line relevance note."
           )
 
+          for probe_path in ("/v1/models", "/v1/language-models"):
+              status, raw = request_raw("GET", probe_path)
+              debug["attempts"].append(
+                  {
+                      "name": f"probe {probe_path}",
+                      "status": status,
+                      "body_preview": (raw or "")[:500],
+                  }
+              )
+
+          responses_payload = {
+              "model": model,
+              "input": [
+                  {"role": "system", "content": "You are a concise ML research scout."},
+                  {"role": "user", "content": prompt},
+              ],
+              "temperature": 0.2,
+          }
+          status, raw = request_raw("POST", "/v1/responses", responses_payload)
+          debug["attempts"].append(
+              {
+                  "name": "responses",
+                  "status": status,
+                  "body_preview": (raw or "")[:500],
+              }
+          )
+
+          text = ""
+          if status is not None and 200 <= status < 300:
+              payload = decode_json(raw or "")
+              if payload:
+                  text = extract_responses_text(payload)
+
+          if not text:
+              chat_payload = {
+                  "model": model,
+                  "messages": [
+                      {"role": "system", "content": "You are a concise ML research scout."},
+                      {"role": "user", "content": prompt},
+                  ],
+                  "temperature": 0.2,
+              }
+              status, raw = request_raw("POST", "/v1/chat/completions", chat_payload)
+              debug["attempts"].append(
+                  {
+                      "name": "chat_completions",
+                      "status": status,
+                      "body_preview": (raw or "")[:500],
+                  }
+              )
+              if status is not None and 200 <= status < 300:
+                  payload = decode_json(raw or "")
+                  if payload:
+                      text = extract_chat_text(payload)
+
+          if not text:
+              print("Grok diagnostics:")
+              print(json.dumps(debug, indent=2))
+              raise SystemExit(
+                  "Grok social signal collection failed. See diagnostics above."
+              )
+
           output_lines = [
               f"# Grok Scout ({dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d')})",
               "",
               f"- Model: `{model}`",
               "",
+              text,
           ]
-
-          try:
-              response = request_json(
-                  "POST",
-                  "/v1/chat/completions",
-                  {
-                      "model": model,
-                      "messages": [
-                          {"role": "system", "content": "You are a concise ML research scout."},
-                          {"role": "user", "content": prompt},
-                      ],
-                      "temperature": 0.2,
-                  },
-              )
-              text = extract_text(response)
-              if not text:
-                  text = "## Grok Social Signals\n\n- No usable signals returned."
-              output_lines.append(text)
-          except Exception as exc:
-              output_lines.append("## Grok Social Signals")
-              output_lines.append("")
-              output_lines.append(f"- Grok query failed: `{exc}`")
-              output_lines.append("- Continue with web/RSS-only scan for this run.")
-
           with open("grok-social-signals.md", "w", encoding="utf-8") as handle:
               handle.write("\n".join(output_lines).strip() + "\n")
+
+          print("Grok diagnostics:")
+          print(json.dumps(debug, indent=2))
+          sys.stdout.flush()
           PY
 
       - name: Collect recent arXiv RSS signals
