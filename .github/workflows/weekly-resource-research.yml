@@ -133,9 +133,7 @@ jobs:
               handle.write("\n".join(output_lines).strip() + "\n")
           PY
 
-      - name: Generate weekly suggestions with Codex CLI
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: Build Codex prompt
         run: |
           cat > codex-weekly-prompt.md <<'EOF'
           You are curating an awesome list for agentic machine learning.
@@ -170,11 +168,14 @@ jobs:
             cat grok-social-signals.md
           } >> codex-weekly-prompt.md
 
-          npx @openai/codex -a never --search exec \
-            -C . \
-            -s read-only \
-            --output-last-message weekly-suggestions.md \
-            "$(cat codex-weekly-prompt.md)"
+      - name: Generate weekly suggestions with Codex CLI
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: codex-weekly-prompt.md
+          output-file: weekly-suggestions.md
+          sandbox: read-only
+          codex-args: '["--search", "-a", "never"]'
 
       - name: Check if suggestions were found
         id: decision
