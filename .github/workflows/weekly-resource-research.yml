@@ -9,6 +9,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   scout:
@@ -387,6 +388,50 @@ jobs:
           add-paths: |
             .github/research-suggestions/${{ steps.prepare.outputs.suggestion_date }}.md
 
-      - name: No suggestions this run
+      - name: Prepare no-PR issue content
+        id: no_pr_issue
         if: steps.decision.outputs.has_suggestions == 'false'
-        run: echo "No new suggestions this week."
+        run: |
+          ISSUE_DATE="$(date -u +'%Y-%m-%d')"
+          ISSUE_FILE=".github/research-suggestions/no-pr-${ISSUE_DATE}.md"
+          mkdir -p .github/research-suggestions
+
+          cat > "$ISSUE_FILE" <<EOF
+          # Weekly research log (no PR) - ${ISSUE_DATE}
+
+          This run did not create a draft PR because Codex returned \`RESULT: NONE\`.
+
+          ## Codex decision
+
+          EOF
+          cat weekly-suggestions.md >> "$ISSUE_FILE"
+
+          cat >> "$ISSUE_FILE" <<'EOF'
+
+          ## Grok social scout output
+
+          EOF
+          cat grok-social-signals.md >> "$ISSUE_FILE"
+
+          cat >> "$ISSUE_FILE" <<'EOF'
+
+          ## arXiv RSS scout output
+
+          EOF
+          cat arxiv-rss-signals.md >> "$ISSUE_FILE"
+
+          echo "issue_date=${ISSUE_DATE}" >> "$GITHUB_OUTPUT"
+          echo "issue_file=${ISSUE_FILE}" >> "$GITHUB_OUTPUT"
+
+      - name: Create issue with weekly scout log
+        if: steps.decision.outputs.has_suggestions == 'false'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "weekly research log (no PR) (${{ steps.no_pr_issue.outputs.issue_date }})"
+          content-filepath: ${{ steps.no_pr_issue.outputs.issue_file }}
+          labels: automation,research,no-pr
+
+      - name: No suggestions summary
+        if: steps.decision.outputs.has_suggestions == 'false'
+        run: echo "No new suggestions this week; logged as issue."
