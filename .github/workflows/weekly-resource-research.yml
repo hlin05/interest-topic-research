@@ -75,20 +75,6 @@ jobs:
               with urllib.request.urlopen(req, timeout=45) as resp:
                   return json.loads(resp.read().decode("utf-8"))
 
-          def pick_model():
-              if requested_model:
-                  return requested_model
-              payload = request_json("GET", "/v1/language-models")
-              for item in payload.get("data", []):
-                  model_id = (item.get("id") or "").strip()
-                  if model_id.startswith("grok"):
-                      return model_id
-              for item in payload.get("data", []):
-                  model_id = (item.get("id") or "").strip()
-                  if model_id:
-                      return model_id
-              return "grok-4"
-
           def extract_text(response_payload):
               choices = response_payload.get("choices", [])
               if not choices:
@@ -104,7 +90,7 @@ jobs:
                   return "\n".join(chunks).strip()
               return ""
 
-          model = pick_model()
+          model = requested_model or "grok-4-1-fast-reasoning"
           prompt = (
               "Find very recent (last 14 days) high-signal resources for an awesome list about "
               "agentic machine learning. Prioritize resources that received notable social discussion "
