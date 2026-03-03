@@ -25,8 +25,26 @@ A resource belongs in this list when it demonstrates autonomous, closed-loop pro
 
 ---
 
+## Research Assistant Agent
+
+This repository runs a weekly **Research Assistant Agent** via GitHub Actions to scout and triage potential additions.
+
+- Workflow: `.github/workflows/weekly-resource-research.yml`
+- Primary curation model: `gpt-5.3-codex` with `xhigh` effort
+- Default Grok scout model: `grok-4-1-fast-reasoning` (override with `GROK_MODEL` repository variable)
+- Signal sources: xAI Grok social scout + arXiv RSS scout + Codex curation pass
+
+**Behavior:**
+
+- If high-confidence additions are found, the agent updates `README.md` and opens a draft PR with a supporting suggestion log.
+- If no high-confidence additions are found, the agent opens an issue log with the weekly scout outputs (instead of forcing changes).
+- The agent applies the inclusion checklist in this README and avoids generic non-ML-workflow agent news.
+
+---
+
 ## Contents
 
+- [Research Assistant Agent](#research-assistant-agent)
 - [Frameworks & Platforms](#frameworks--platforms)
 - [AutoML Agents](#automl-agents)
 - [Research Papers](#research-papers)
