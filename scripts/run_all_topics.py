@@ -59,6 +59,8 @@ def process_topic(topic, run_id, date_str):
         capture=True,
     )
     print(result.stdout)
+    if not result.stdout.strip():
+        print(f"[{topic_id}] Warning: claude_curate.py produced no output", file=sys.stderr)
 
     # Parse decision
     decision = "NONE"
@@ -70,9 +72,13 @@ def process_topic(topic, run_id, date_str):
     os.makedirs(os.path.join(REPO_ROOT, suggestions_dir), exist_ok=True)
 
     if decision == "FOUND":
-        # Copy suggestion log before creating branch
         suggestions_src = os.path.join(REPO_ROOT, topic_dir, "weekly-suggestions.md")
         suggestions_dst = os.path.join(REPO_ROOT, suggestions_dir, f"{date_str}.md")
+
+        # Create branch from main first, then write files to avoid orphaning on main
+        branch = f"automation/weekly-{topic_id}-{run_id}"
+        run_cmd(["git", "checkout", "-b", branch])
+
         if os.path.exists(suggestions_src):
             with open(suggestions_src) as sf:
                 content = sf.read()
@@ -80,10 +86,8 @@ def process_topic(topic, run_id, date_str):
             with open(suggestions_dst, "w") as df:
                 df.write(log_content)
 
-        # Create branch from main, add only the needed files
-        branch = f"automation/weekly-{topic_id}-{run_id}"
-        run_cmd(["git", "checkout", "-b", branch])
-        run_cmd(["git", "add", f"{topic_dir}/README.md", suggestions_dst])
+        suggestions_dst_rel = os.path.relpath(suggestions_dst, REPO_ROOT)
+        run_cmd(["git", "add", f"{topic_dir}/README.md", suggestions_dst_rel])
         run_cmd([
             "git", "commit", "-m",
             f"chore: weekly resource suggestions for {topic_id} ({date_str})",
