@@ -3,13 +3,13 @@ name: Research Assistant Agent
 on:
   workflow_dispatch:
   schedule:
-    # Runs every Monday at 14:00 UTC.
     - cron: "0 14 * * 1"
 
 permissions:
   contents: write
   pull-requests: write
   issues: write
+  projects: write
 
 jobs:
   scout:
@@ -18,437 +18,38 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          node-version: "20"
+          python-version: "3.12"
 
-      - name: Verify OpenAI API key is configured
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Configure git identity
         run: |
-          if [ -z "$OPENAI_API_KEY" ]; then
-            echo "Missing repository secret: OPENAI_API_KEY"
-            exit 1
-          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Verify xAI API key is configured
+      - name: Verify API keys
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
         run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "Missing repository secret: ANTHROPIC_API_KEY"
+            exit 1
+          fi
           if [ -z "$XAI_API_KEY" ]; then
             echo "Missing repository secret: XAI_API_KEY"
             exit 1
           fi
 
-      - name: Collect Grok social signals
+      - name: Run research agent for all topics
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           XAI_BASE_URL: ${{ vars.XAI_BASE_URL }}
           GROK_MODEL: ${{ vars.GROK_MODEL }}
-        run: |
-          python3 - <<'PY'
-          import datetime as dt
-          import json
-          import os
-          import sys
-          import urllib.error
-          import urllib.request
-
-          base_url = (os.getenv("XAI_BASE_URL") or "https://api.x.ai").rstrip("/")
-          api_key = os.environ["XAI_API_KEY"]
-          requested_model = (os.getenv("GROK_MODEL") or "").strip()
-          model = requested_model or "grok-4-1-fast-reasoning"
-
-          headers = {
-              "Authorization": f"Bearer {api_key}",
-              "Content-Type": "application/json",
-              "Accept": "application/json",
-              "User-Agent": "weekly-resource-research/1.0",
-          }
-
-          debug = {
-              "timestamp": dt.datetime.now(dt.timezone.utc).isoformat(),
-              "base_url": base_url,
-              "model": model,
-              "attempts": [],
-          }
-
-          def request_raw(method, path, payload=None):
-              body = None
-              if payload is not None:
-                  body = json.dumps(payload).encode("utf-8")
-              req = urllib.request.Request(
-                  url=f"{base_url}{path}",
-                  method=method,
-                  headers=headers,
-                  data=body,
-              )
-              try:
-                  with urllib.request.urlopen(req, timeout=45) as resp:
-                      return resp.status, resp.read().decode("utf-8", errors="replace")
-              except urllib.error.HTTPError as err:
-                  return err.code, err.read().decode("utf-8", errors="replace")
-              except urllib.error.URLError as err:
-                  return None, str(err)
-
-          def decode_json(raw_text):
-              try:
-                  return json.loads(raw_text)
-              except json.JSONDecodeError:
-                  return None
-
-          def extract_chat_text(response_payload):
-              choices = response_payload.get("choices", [])
-              if not choices:
-                  return ""
-              content = choices[0].get("message", {}).get("content", "")
-              if isinstance(content, str):
-                  return content.strip()
-              if isinstance(content, list):
-                  chunks = []
-                  for part in content:
-                      if isinstance(part, dict) and part.get("text"):
-                          chunks.append(str(part["text"]))
-                  return "\n".join(chunks).strip()
-              return ""
-
-          def extract_responses_text(response_payload):
-              direct = str(response_payload.get("output_text") or "").strip()
-              if direct:
-                  return direct
-              chunks = []
-              for item in response_payload.get("output", []):
-                  if item.get("type") != "message":
-                      continue
-                  for part in item.get("content", []):
-                      part_type = part.get("type")
-                      if part_type in ("output_text", "text"):
-                          text_value = str(part.get("text") or "").strip()
-                          if text_value:
-                              chunks.append(text_value)
-              return "\n".join(chunks).strip()
-
-          prompt = (
-              "Find very recent (last 14 days) leads for AGENTIC ML specifically. Focus on resources "
-              "that automate ML workflows such as data prep, feature engineering, model training, "
-              "evaluation, and experimentation. Exclude generic web/desktop/coding agents unless they "
-              "show clear empirical ML workflow outcomes. Prioritize resources that received notable "
-              "social discussion (for example on X/Twitter), but each item must include a primary "
-              "technical URL (paper/repo/blog) with verifiable public access. "
-              "Return markdown starting with '## Grok Social Signals' and then up to 10 bullets. "
-              "Each bullet format: - [Title](PRIMARY_URL) - one-line relevance note; social evidence: "
-              "SOCIAL_URL or 'n/a'."
-          )
-
-          for probe_path in ("/v1/models", "/v1/language-models"):
-              status, raw = request_raw("GET", probe_path)
-              debug["attempts"].append(
-                  {
-                      "name": f"probe {probe_path}",
-                      "status": status,
-                      "body_preview": (raw or "")[:500],
-                  }
-              )
-
-          responses_payload = {
-              "model": model,
-              "input": [
-                  {"role": "system", "content": "You are a concise ML research scout."},
-                  {"role": "user", "content": prompt},
-              ],
-              "temperature": 0.2,
-          }
-          status, raw = request_raw("POST", "/v1/responses", responses_payload)
-          debug["attempts"].append(
-              {
-                  "name": "responses",
-                  "status": status,
-                  "body_preview": (raw or "")[:500],
-              }
-          )
-
-          text = ""
-          if status is not None and 200 <= status < 300:
-              payload = decode_json(raw or "")
-              if payload:
-                  text = extract_responses_text(payload)
-
-          if not text:
-              chat_payload = {
-                  "model": model,
-                  "messages": [
-                      {"role": "system", "content": "You are a concise ML research scout."},
-                      {"role": "user", "content": prompt},
-                  ],
-                  "temperature": 0.2,
-              }
-              status, raw = request_raw("POST", "/v1/chat/completions", chat_payload)
-              debug["attempts"].append(
-                  {
-                      "name": "chat_completions",
-                      "status": status,
-                      "body_preview": (raw or "")[:500],
-                  }
-              )
-              if status is not None and 200 <= status < 300:
-                  payload = decode_json(raw or "")
-                  if payload:
-                      text = extract_chat_text(payload)
-
-          if not text:
-              print("Grok diagnostics:")
-              print(json.dumps(debug, indent=2))
-              raise SystemExit(
-                  "Grok social signal collection failed. See diagnostics above."
-              )
-
-          output_lines = [
-              f"# Grok Scout ({dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d')})",
-              "",
-              f"- Model: `{model}`",
-              "",
-              text,
-          ]
-          with open("grok-social-signals.md", "w", encoding="utf-8") as handle:
-              handle.write("\n".join(output_lines).strip() + "\n")
-
-          print("Grok diagnostics:")
-          print(json.dumps(debug, indent=2))
-          sys.stdout.flush()
-          PY
-
-      - name: Collect recent arXiv RSS signals
-        run: |
-          python3 - <<'PY'
-          import datetime as dt
-          import html
-          import re
-          import urllib.request
-          import xml.etree.ElementTree as ET
-
-          feeds = [
-              ("cs.AI", "https://rss.arxiv.org/rss/cs.AI"),
-              ("cs.LG", "https://rss.arxiv.org/rss/cs.LG"),
-              ("stat.ML", "https://rss.arxiv.org/rss/stat.ML"),
-          ]
-          cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=14)
-          collected = []
-
-          def clean_text(value):
-              value = html.unescape(value or "")
-              value = re.sub(r"<[^>]+>", " ", value)
-              return " ".join(value.split())
-
-          for feed_name, feed_url in feeds:
-              try:
-                  with urllib.request.urlopen(feed_url, timeout=30) as resp:
-                      xml_text = resp.read().decode("utf-8", errors="replace")
-                  root = ET.fromstring(xml_text)
-              except Exception as exc:
-                  collected.append((feed_name, None, None, f"Feed fetch failed: {exc}"))
-                  continue
-
-              channel = root.find("channel")
-              if channel is None:
-                  collected.append((feed_name, None, None, "Missing RSS channel data"))
-                  continue
-
-              for item in channel.findall("item"):
-                  title = clean_text(item.findtext("title", default=""))
-                  link = clean_text(item.findtext("link", default=""))
-                  pub_raw = clean_text(item.findtext("pubDate", default=""))
-                  if not title or not link:
-                      continue
-                  try:
-                      published = dt.datetime.strptime(
-                          pub_raw, "%a, %d %b %Y %H:%M:%S %z"
-                      )
-                  except Exception:
-                      published = None
-                  if published is None or published < cutoff:
-                      continue
-                  collected.append((feed_name, title, link, published.isoformat()))
-                  if sum(1 for item in collected if item[1]) >= 18:
-                      break
-              if sum(1 for item in collected if item[1]) >= 18:
-                  break
-
-          lines = [
-              f"# arXiv RSS Scout ({dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d')})",
-              "",
-              "Recent papers from arXiv category RSS feeds (last 14 days).",
-              "",
-          ]
-
-          has_items = False
-          for source, title, link, extra in collected:
-              if title and link:
-                  has_items = True
-                  lines.append(f"- [{title}]({link}) ({source})")
-              elif extra:
-                  lines.append(f"- {source}: {extra}")
-
-          if not has_items:
-              lines.append("- No recent arXiv items found from configured feeds.")
-
-          with open("arxiv-rss-signals.md", "w", encoding="utf-8") as handle:
-              handle.write("\n".join(lines).strip() + "\n")
-          PY
-
-      - name: Build Codex prompt
-        run: |
-          cat > codex-weekly-prompt.md <<'EOF'
-          You are curating an awesome list for agentic machine learning.
-
-          Task:
-          1) Read README.md in this repository.
-          2) Use the Grok social scout context from `grok-social-signals.md`.
-          3) Use arXiv RSS context from `arxiv-rss-signals.md`.
-          4) Apply this inclusion checklist (resource should satisfy at least 3 of 4):
-             - goal-directed ML planning
-             - tool-using ML lifecycle execution (data prep/feature engineering/training/evaluation/experimentation)
-             - iterative feedback loop from metrics/errors/results
-             - empirical ML outcome (benchmark/ablation/competition/measurable gain)
-          5) Exclude or deprioritize:
-             - generic web/desktop/coding agents without meaningful ML workflow contribution
-             - social-only announcements lacking a primary technical source (paper/repo/blog)
-             - stale resources unless there is a substantive recent release/update
-          6) Propose only high-signal items that are NOT already present in README.md.
-          7) If additions are warranted, directly update README.md in this workspace:
-             - add entries in the correct section(s)
-             - preserve existing markdown style and ordering conventions
-             - keep descriptions concise and evidence-backed
-             - do not modify unrelated sections
-          8) It is completely acceptable to recommend zero additions this week.
-             Do not force suggestions when quality is low or novelty is weak.
-
-          Output rules:
-          - First line MUST be exactly one of:
-            RESULT: NONE
-            RESULT: FOUND
-          - If RESULT: NONE, add one short sentence explaining why no additions are needed.
-          - If RESULT: FOUND, output concise markdown with:
-            - a short "Scan summary"
-            - up to 8 candidate items total
-            - for each item: title, URL, one-line rationale, and which checklist criteria it satisfies
-            - a short "README updates made" section describing what was inserted
-          EOF
-
-          {
-            echo
-            echo "Additional context from Grok social scout:"
-            echo
-            cat grok-social-signals.md
-            echo
-            echo "Additional context from arXiv RSS scout:"
-            echo
-            cat arxiv-rss-signals.md
-          } >> codex-weekly-prompt.md
-
-      - name: Generate weekly suggestions with Codex CLI
-        uses: openai/codex-action@v1
-        with:
-          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          prompt-file: codex-weekly-prompt.md
-          output-file: weekly-suggestions.md
-          model: gpt-5.3-codex
-          effort: xhigh
-          sandbox: workspace-write
-
-      - name: Check if suggestions were found
-        id: decision
-        run: |
-          first_line="$(sed -n '1p' weekly-suggestions.md | tr -d '\r')"
-          if [ "$first_line" = "RESULT: FOUND" ]; then
-            echo "has_suggestions=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "has_suggestions=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Prepare draft PR content
-        id: prepare
-        if: steps.decision.outputs.has_suggestions == 'true'
-        run: |
-          SUGGESTION_DATE="$(date -u +'%Y-%m-%d')"
-          mkdir -p .github/research-suggestions
-          tail -n +2 weekly-suggestions.md > ".github/research-suggestions/${SUGGESTION_DATE}.md"
-          echo "suggestion_date=${SUGGESTION_DATE}" >> "$GITHUB_OUTPUT"
-
-      - name: "Verify README updated for RESULT: FOUND"
-        if: steps.decision.outputs.has_suggestions == 'true'
-        run: |
-          if git diff --quiet -- README.md; then
-            echo "RESULT: FOUND but README.md was not updated."
-            exit 1
-          fi
-
-      - name: Create draft pull request
-        if: steps.decision.outputs.has_suggestions == 'true'
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: weekly resource suggestions (${{ steps.prepare.outputs.suggestion_date }})"
-          branch: "automation/weekly-resource-suggestions-${{ github.run_id }}"
-          delete-branch: true
-          title: "chore: weekly resource suggestions (${{ steps.prepare.outputs.suggestion_date }})"
-          body: |
-            This draft PR was generated by the Research Assistant Agent workflow.
-
-            It contains candidate resources for review and corresponding README updates.
-            Some weeks should produce no PR if there are no high-signal additions.
-
-            Review the file under `.github/research-suggestions/` and add accepted items to `README.md`.
-          draft: true
-          labels: automation,research
-          add-paths: |
-            README.md
-            .github/research-suggestions/${{ steps.prepare.outputs.suggestion_date }}.md
-
-      - name: Prepare no-PR issue content
-        id: no_pr_issue
-        if: steps.decision.outputs.has_suggestions == 'false'
-        run: |
-          ISSUE_DATE="$(date -u +'%Y-%m-%d')"
-          ISSUE_FILE=".github/research-suggestions/no-pr-${ISSUE_DATE}.md"
-          mkdir -p .github/research-suggestions
-
-          cat > "$ISSUE_FILE" <<EOF
-          # Weekly research log (no PR) - ${ISSUE_DATE}
-
-          This run did not create a draft PR because Codex returned \`RESULT: NONE\`.
-
-          ## Codex decision
-
-          EOF
-          cat weekly-suggestions.md >> "$ISSUE_FILE"
-
-          cat >> "$ISSUE_FILE" <<'EOF'
-
-          ## Grok social scout output
-
-          EOF
-          cat grok-social-signals.md >> "$ISSUE_FILE"
-
-          cat >> "$ISSUE_FILE" <<'EOF'
-
-          ## arXiv RSS scout output
-
-          EOF
-          cat arxiv-rss-signals.md >> "$ISSUE_FILE"
-
-          echo "issue_date=${ISSUE_DATE}" >> "$GITHUB_OUTPUT"
-          echo "issue_file=${ISSUE_FILE}" >> "$GITHUB_OUTPUT"
-
-      - name: Create issue with weekly scout log
-        if: steps.decision.outputs.has_suggestions == 'false'
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          title: "research assistant log (no PR) (${{ steps.no_pr_issue.outputs.issue_date }})"
-          content-filepath: ${{ steps.no_pr_issue.outputs.issue_file }}
-          labels: automation,research,no-pr
-
-      - name: No suggestions summary
-        if: steps.decision.outputs.has_suggestions == 'false'
-        run: echo "No new suggestions this week; logged as issue."
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/run_all_topics.py
