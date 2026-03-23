@@ -15,11 +15,25 @@ Each topic has its own curated awesome list maintained by a weekly Research Assi
 | Topic | Description |
 |-------|-------------|
 | [Agentic ML](topics/agentic-ml/) | Autonomous AI systems for ML workflows |
+| [Agentic Workflow Design](topics/agentic-workflow-design/) | Patterns, principles, and practices for production-grade agentic systems |
+
+## Prerequisites
+
+| Requirement | Used by | Notes |
+|-------------|---------|-------|
+| `ANTHROPIC_API_KEY` | `add-topic.sh`, weekly curation | Claude deduplication and curation |
+| `XAI_API_KEY` | Weekly workflow (Grok Scout) | GitHub repository secret |
+| `XAI_BASE_URL` | Weekly workflow | Repository variable, default: `https://api.x.ai` |
+| `GROK_MODEL` | Weekly workflow | Repository variable, default: `grok-4-1-fast-reasoning` |
+| [`gh` CLI](https://cli.github.com/) | `add-topic.sh` | For GitHub Project board creation |
+
+For local use, set `ANTHROPIC_API_KEY` in your environment before running `add-topic.sh`.
 
 ## Adding a Topic
 
 ```bash
 ./add-topic.sh "Your Topic Name"
+./add-topic.sh "Your Topic Name" --max-entries 3   # limit weekly additions (default: 5)
 ```
 
 The CLI will:

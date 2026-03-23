@@ -20,4 +20,29 @@ topics:
       - "Generic web/desktop/coding agents without meaningful ML workflow contribution"
       - "Social-only announcements without a primary technical source (paper/repo/blog)"
       - "Stale resources unless there is a substantive new release/update in the recent window"
+    max_entries_per_week: 5
+    github_project: null
+
+  - id: agentic-workflow-design
+    name: "Awesome Agentic Workflow Design"
+    description: "Architectural patterns, design principles, and engineering practices for building reliable, production-grade agentic systems"
+    grok_keywords: >-
+      agentic workflow design, agent architecture patterns, multi-agent orchestration,
+      agentic systems engineering, LLM agent design patterns, production agents
+    arxiv_feeds:
+      - { name: "cs.AI", url: "https://rss.arxiv.org/rss/cs.AI" }
+      - { name: "cs.SE", url: "https://rss.arxiv.org/rss/cs.SE" }
+      - { name: "cs.MA", url: "https://rss.arxiv.org/rss/cs.MA" }
+    inclusion_criteria:
+      min_match: 3
+      checklist:
+        - "Architectural guidance for goal-directed agent systems (patterns, orchestration, state management)"
+        - "Tool-use and execution design across agent lifecycle stages (planning, execution, feedback, recovery)"
+        - "Iterative refinement practices (evaluation loops, human-in-the-loop, observability)"
+        - "Empirical or practical grounding (case studies, benchmarks, production deployment evidence)"
+    exclude:
+      - "Generic LLM tutorials without agentic design focus"
+      - "Social-only announcements without a primary technical source (paper/repo/blog)"
+      - "Stale resources unless there is a substantive new release/update in the recent window"
+    max_entries_per_week: 2
     github_project: null

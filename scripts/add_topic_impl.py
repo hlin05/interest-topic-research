@@ -97,7 +97,7 @@ def generate_topic_config(topic_name, scoping_instruction=""):
     return json.loads(text)
 
 
-def scaffold_topic(slug, name, config):
+def scaffold_topic(slug, name, config, max_entries=5):
     """Create the topic folder, README, config entry, project board, and suggestion dir."""
     # Create topic directory
     t_dir = topic_dir(slug)
@@ -152,6 +152,7 @@ def scaffold_topic(slug, name, config):
         "arxiv_feeds": config["arxiv_feeds"],
         "inclusion_criteria": config["inclusion_criteria"],
         "exclude": config["exclude"],
+        "max_entries_per_week": max_entries,
         "github_project": project_number,
     }
     topics.append(new_entry)
@@ -182,7 +183,15 @@ def scaffold_topic(slug, name, config):
 
 
 def main():
-    topic_name = sys.argv[1]
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("topic_name")
+    parser.add_argument("--max-entries", type=int, default=5,
+                        help="Max entries the curation agent may add per weekly run (default: 5)")
+    args = parser.parse_args()
+
+    topic_name = args.topic_name
+    max_entries = args.max_entries
     slug = slugify(topic_name)
     existing = load_topics()
 
@@ -233,12 +242,12 @@ def main():
                 scoping = f"ONLY cover aspects of {topic_name} that are NOT covered by: {overlapping} ({explanation})"
                 print("Generating scoped topic config...")
                 config = generate_topic_config(topic_name, scoping_instruction=scoping)
-                scaffold_topic(slug, topic_name, config)
+                scaffold_topic(slug, topic_name, config, max_entries=max_entries)
                 return
             elif choice == "3":
                 print("Generating standalone topic config...")
                 config = generate_topic_config(topic_name)
-                scaffold_topic(slug, topic_name, config)
+                scaffold_topic(slug, topic_name, config, max_entries=max_entries)
                 return
             else:
                 print("Cancelled.")
@@ -247,7 +256,7 @@ def main():
     # No overlap — proceed directly
     print("No overlap detected. Generating topic config...")
     config = generate_topic_config(topic_name)
-    scaffold_topic(slug, topic_name, config)
+    scaffold_topic(slug, topic_name, config, max_entries=max_entries)
     print(f"\nDone! Topic '{topic_name}' scaffolded at topics/{slug}/")
     print("Review and edit topics.yml if needed.")
 

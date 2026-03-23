@@ -105,6 +105,7 @@ def main():
     checklist = criteria.get("checklist", [])
     min_match = criteria.get("min_match", 3)
     excludes = topic.get("exclude", [])
+    max_entries = topic.get("max_entries_per_week", 5)
 
     checklist_text = "\n".join(f"  - {c}" for c in checklist)
     exclude_text = "\n".join(f"  - {e}" for e in excludes)
@@ -132,6 +133,7 @@ def main():
         '  ]\n'
         '}\n'
         '```\n'
+        f"Propose at most {max_entries} suggestion(s) per run — rank by signal strength and stop there.\n"
         "If no additions are warranted, return NONE with an empty suggestions array.\n"
         "Do NOT force suggestions when quality is low or novelty is weak.\n"
         "Only propose items NOT already present in the README."
@@ -194,7 +196,8 @@ def main():
     if summary:
         print(summary)
 
-    # If FOUND, update the README
+    # If FOUND, update the README (cap at max_entries as a hard guard)
+    suggestions = suggestions[:max_entries]
     if decision == "FOUND" and suggestions:
         updated_readme = readme_content
         for s in suggestions:
