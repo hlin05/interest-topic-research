@@ -14,7 +14,10 @@ def load_topics():
     """Load and return the list of topics from topics.yml."""
     with open(TOPICS_FILE, encoding="utf-8") as f:
         data = yaml.safe_load(f)
-    return data.get("topics", [])
+    if not isinstance(data, dict):
+        return []
+    topics = data.get("topics")
+    return topics if isinstance(topics, list) else []
 
 
 def find_topic(topic_id):
@@ -51,6 +54,19 @@ def suggestions_dir(topic_id):
 
 
 def save_topics(topics_list):
-    """Write the topics list back to topics.yml."""
+    """Write the topics list back to topics.yml.
+
+    Note: yaml.dump does not preserve the original hand-authored formatting
+    (flow-style dicts, folded scalars). After the first write, the file will
+    be in standard block-style YAML, which is functionally identical but
+    visually different from the seed entry.
+    """
     with open(TOPICS_FILE, "w", encoding="utf-8") as f:
-        yaml.dump({"topics": topics_list}, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+        yaml.dump(
+            {"topics": topics_list},
+            f,
+            default_flow_style=False,
+            sort_keys=False,
+            allow_unicode=True,
+            indent=2,
+        )
