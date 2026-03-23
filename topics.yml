@@ -47,26 +47,25 @@ topics:
     max_entries_per_week: 2
     github_project: null
 
-  - id: top-claude-plugins
-    name: "Top Claude Plugins"
-    description: "High-signal Claude plugins, MCP servers, and integrations that meaningfully extend Claude's capabilities in real workflows"
+  - id: top-claude-tips
+    name: "Top Claude Tips"
+    description: "High-signal practical tips, techniques, and workflows for getting the most out of Claude week over week"
     grok_keywords: >-
-      Claude plugins, MCP server, Model Context Protocol, Claude integrations,
-      Claude extensions, Claude tool use, Claude MCP
+      Claude tips, Claude prompting, Claude workflow, Claude best practices,
+      Claude techniques, Claude productivity, how to use Claude
     arxiv_feeds:
       - { name: "cs.AI", url: "https://rss.arxiv.org/rss/cs.AI" }
       - { name: "cs.HC", url: "https://rss.arxiv.org/rss/cs.HC" }
-      - { name: "cs.SE", url: "https://rss.arxiv.org/rss/cs.SE" }
     inclusion_criteria:
       min_match: 3
       checklist:
-        - "Extends Claude with a concrete capability (tool use, data access, service integration, workflow automation)"
-        - "Actively maintained with evidence of real-world usage (stars, downloads, community activity)"
-        - "Built on a standard integration layer (MCP, Claude API tool use, Claude.ai plugin)"
-        - "Documented with clear setup instructions and a defined use case"
+        - "Practical, actionable tip or technique for using Claude more effectively"
+        - "Grounded in real usage evidence (community post, demo, benchmark, or documented workflow)"
+        - "Applicable to a broad audience (not highly domain-specific or niche)"
+        - "Novel or non-obvious — not a basic feature already in official docs"
     exclude:
-      - "Toy or demo projects without production usage evidence"
-      - "Plugins that duplicate a natively supported Claude capability"
-      - "Abandoned repos (no activity in 6+ months) unless widely adopted"
+      - "Generic AI hype without concrete Claude-specific technique"
+      - "Outdated tips superseded by newer Claude capabilities"
+      - "Social-only announcements without a primary source (post/repo/demo)"
     max_entries_per_week: 3
     github_project: null
