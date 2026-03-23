@@ -1,0 +1,23 @@
+topics:
+  - id: agentic-ml
+    name: "Awesome Agentic ML"
+    description: "Autonomous AI systems that plan, execute, and iterate on machine learning workflows with minimal human intervention"
+    grok_keywords: >-
+      agentic ML, AutoML agents, autonomous machine learning,
+      LLM ML engineering, ML workflow automation
+    arxiv_feeds:
+      - { name: "cs.AI", url: "https://rss.arxiv.org/rss/cs.AI" }
+      - { name: "cs.LG", url: "https://rss.arxiv.org/rss/cs.LG" }
+      - { name: "stat.ML", url: "https://rss.arxiv.org/rss/stat.ML" }
+    inclusion_criteria:
+      min_match: 3
+      checklist:
+        - "Goal-directed ML planning (selects or revises strategy for an ML objective)"
+        - "Tool-using execution across ML lifecycle stages (data prep, feature engineering, model training, evaluation, experimentation)"
+        - "Iterative feedback loop (uses metrics/errors/results to revise actions)"
+        - "Empirical ML outcome (benchmark, competition result, ablation, or measurable improvement)"
+    exclude:
+      - "Generic web/desktop/coding agents without meaningful ML workflow contribution"
+      - "Social-only announcements without a primary technical source (paper/repo/blog)"
+      - "Stale resources unless there is a substantive new release/update in the recent window"
+    github_project: null
