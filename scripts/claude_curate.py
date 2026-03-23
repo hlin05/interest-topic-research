@@ -44,7 +44,7 @@ def insert_suggestion_into_readme(readme_content, suggestion):
 
     # Look for the section heading
     section_pattern = re.compile(
-        rf"^##\s+.*{re.escape(section)}.*$",
+        rf"^#{{2,3}}\s+.*{re.escape(section)}.*$",
         re.MULTILINE | re.IGNORECASE,
     )
     match = section_pattern.search(readme_content)
@@ -159,6 +159,9 @@ def main():
         messages=[{"role": "user", "content": user_message}],
     )
 
+    if not response.content:
+        print("Error: Anthropic API returned empty content", file=sys.stderr)
+        sys.exit(1)
     response_text = response.content[0].text
 
     # Parse the structured response
@@ -186,24 +189,31 @@ def main():
                 f.write(f"- [{s['title']}]({s['url']}) — {s['description']}\n")
                 f.write(f"  Section: {s['section']} | Criteria: {criteria_str}\n\n")
 
+    # Output the result line for the workflow to parse (MUST be first stdout line)
+    print(f"RESULT: {decision}")
+    if summary:
+        print(summary)
+
     # If FOUND, update the README
     if decision == "FOUND" and suggestions:
         updated_readme = readme_content
         for s in suggestions:
-            # Check the item isn't already in the README
-            if s["url"] in updated_readme or s["title"] in updated_readme:
-                print(f"Skipping duplicate: {s['title']}")
+            try:
+                # Skip if already present — use anchored title check to avoid false positives
+                if s.get("url", "") in updated_readme or f"[{s.get('title', '')}]" in updated_readme:
+                    print(f"Skipping duplicate: {s.get('title', '?')}")
+                    continue
+                if not all(k in s for k in ("title", "url", "section", "description")):
+                    print(f"Warning: skipping malformed suggestion (missing required fields): {s!r}", file=sys.stderr)
+                    continue
+                updated_readme = insert_suggestion_into_readme(updated_readme, s)
+            except Exception as exc:
+                print(f"Warning: could not insert suggestion '{s.get('title', '?')}': {exc}", file=sys.stderr)
                 continue
-            updated_readme = insert_suggestion_into_readme(updated_readme, s)
 
         with open(readme_path, "w", encoding="utf-8") as f:
             f.write(updated_readme)
         print(f"README updated at {readme_path}")
-
-    # Output the result line for the workflow to parse
-    print(f"RESULT: {decision}")
-    if summary:
-        print(summary)
 
 
 if __name__ == "__main__":
