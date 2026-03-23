@@ -37,7 +37,10 @@ def main():
     max_items = 18
 
     for feed_entry in feeds:
-        feed_name = feed_entry["name"]
+        if not isinstance(feed_entry, dict) or "url" not in feed_entry:
+            print(f"Warning: skipping malformed feed entry: {feed_entry!r}", file=sys.stderr)
+            continue
+        feed_name = feed_entry.get("name", feed_entry["url"])
         feed_url = feed_entry["url"]
         try:
             with urllib.request.urlopen(feed_url, timeout=30) as resp:
