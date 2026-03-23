@@ -6,9 +6,9 @@
 
 ## Scope
 
-{scope}
+{description}
 
-**Inclusion checklist (meet at least {min_match} of {num_criteria}):**
+**Inclusion checklist (meet at least {min_match} criteria):**
 
 {checklist}
 
@@ -32,7 +32,7 @@ This topic is maintained by a weekly Research Assistant Agent. See the [main REA
 
 ## Contributing
 
-Contributions welcome! [Open an issue](../../../../issues) or submit a PR.
+Contributions welcome! [Open an issue](../../issues) or submit a PR.
 
 When proposing additions, include a short note on which inclusion criteria the item satisfies and link the strongest supporting evidence (paper/repo/benchmark/blog).
 
