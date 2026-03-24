@@ -38,6 +38,12 @@ This topic is maintained by a weekly Research Assistant Agent. See the [main REA
 
 *Top 3 Claude tips of the week — populated by the weekly Research Assistant Agent.*
 
+
+- [Mastering Claude with XML Tags](https://overchatgpt.com/prompting/claude-xml-best-practices) — Practical guide to using XML tags for structured prompting in Claude — a non-obvious technique that significantly improves output reliability and parsing.
+
+- [Best Practices for Claude Computer Use](https://docs.anthropic.com/en/docs/build-with-claude/computer-use#prompting-tips) — Official prompting tips for Claude's computer use beta — concrete guidance on structuring agentic tasks, handling failures, and scoping actions safely.
+
+- [Claude Artifacts Workflow Guide](https://aidavid.co/claude-artifacts-guide) — Step-by-step build/test loop workflows using Claude Artifacts — covers iterative prototyping patterns that go beyond basic artifact creation.
 ---
 
 ## Contributing
