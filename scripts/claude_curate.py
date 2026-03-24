@@ -2,10 +2,12 @@
 """Claude curation — evaluates scout signals and proposes README additions using Anthropic API."""
 
 import argparse
+import datetime as dt
 import json
 import os
 import re
 import sys
+from collections import defaultdict
 
 import anthropic
 
@@ -31,56 +33,46 @@ def extract_json_from_response(text):
     return json.loads(text)
 
 
-def insert_suggestion_into_readme(readme_content, suggestion):
-    """Insert a suggestion into the correct section of the README.
+def insert_dated_block_into_section(readme_content, section, date_str, suggestions):
+    """Insert a dated block of suggestions at the top of a section (most recent first).
 
-    Finds the section by heading match and appends the entry as a table row
-    or list item depending on section format.
+    Builds a ### YYYY-MM-DD sub-heading with list entries and inserts it before
+    any previous dated blocks, so the newest week always appears first.
     """
-    section = suggestion["section"]
-    title = suggestion["title"]
-    url = suggestion["url"]
-    description = suggestion["description"]
+    block_lines = [f"### {date_str}", ""]
+    for s in suggestions:
+        block_lines.append(f"- [{s['title']}]({s['url']}) — {s['description']}")
+    block_lines.append("")
+    block = "\n".join(block_lines) + "\n"
 
-    # Look for the section heading
+    # Find the section heading
     section_pattern = re.compile(
         rf"^#{{2,3}}\s+.*{re.escape(section)}.*$",
         re.MULTILINE | re.IGNORECASE,
     )
     match = section_pattern.search(readme_content)
     if not match:
-        # Section not found — append before Contributing section
+        # Section not found — create it before Contributing
         contrib_match = re.search(r"^## Contributing", readme_content, re.MULTILINE)
         if contrib_match:
-            new_section = (
-                f"\n---\n\n## {section}\n\n"
-                f"| Project | Description | Stars |\n"
-                f"|---------|-------------|-------|\n"
-                f"| [{title}]({url}) | {description} | - |\n"
-            )
+            new_section = f"\n---\n\n## {section}\n\n{block}"
             pos = contrib_match.start()
             return readme_content[:pos] + new_section + "\n" + readme_content[pos:]
-        # Fallback: append at end
-        return readme_content + f"\n\n## {section}\n\n- [{title}]({url}) — {description}\n"
+        return readme_content + f"\n\n## {section}\n\n{block}"
 
-    # Find the end of the section (next --- or ## heading)
     section_start = match.end()
-    next_heading = re.search(r"^---$|^## ", readme_content[section_start:], re.MULTILINE)
-    section_end = section_start + next_heading.start() if next_heading else len(readme_content)
+    next_section = re.search(r"^---$|^## ", readme_content[section_start:], re.MULTILINE)
+    section_end = section_start + next_section.start() if next_section else len(readme_content)
     section_text = readme_content[section_start:section_end]
 
-    # Check if section uses a table format
-    if "|------" in section_text:
-        # Find the last table row and insert after it
-        table_rows = list(re.finditer(r"^\|.*\|$", section_text, re.MULTILINE))
-        if table_rows:
-            last_row_end = section_start + table_rows[-1].end()
-            new_row = f"\n| [{title}]({url}) | {description} | - |"
-            return readme_content[:last_row_end] + new_row + readme_content[last_row_end:]
+    # Insert before the first existing dated sub-heading, or at the end of the section
+    prev_dated = re.search(r"^### \d{4}-\d{2}-\d{2}", section_text, re.MULTILINE)
+    if prev_dated:
+        insert_at = section_start + prev_dated.start()
+    else:
+        insert_at = section_end
 
-    # List format — insert before section end
-    new_entry = f"\n- [{title}]({url}) — {description}\n"
-    return readme_content[:section_end] + new_entry + readme_content[section_end:]
+    return readme_content[:insert_at] + block + "\n" + readme_content[insert_at:]
 
 
 def main():
@@ -199,20 +191,27 @@ def main():
     # If FOUND, update the README (cap at max_entries as a hard guard)
     suggestions = suggestions[:max_entries]
     if decision == "FOUND" and suggestions:
+        date_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
         updated_readme = readme_content
+
+        # Group suggestions by section, filtering duplicates
+        by_section = defaultdict(list)
         for s in suggestions:
-            try:
-                # Skip if already present — use anchored title check to avoid false positives
-                if s.get("url", "") in updated_readme or f"[{s.get('title', '')}]" in updated_readme:
-                    print(f"Skipping duplicate: {s.get('title', '?')}")
-                    continue
-                if not all(k in s for k in ("title", "url", "section", "description")):
-                    print(f"Warning: skipping malformed suggestion (missing required fields): {s!r}", file=sys.stderr)
-                    continue
-                updated_readme = insert_suggestion_into_readme(updated_readme, s)
-            except Exception as exc:
-                print(f"Warning: could not insert suggestion '{s.get('title', '?')}': {exc}", file=sys.stderr)
+            if s.get("url", "") in updated_readme or f"[{s.get('title', '')}]" in updated_readme:
+                print(f"Skipping duplicate: {s.get('title', '?')}")
                 continue
+            if not all(k in s for k in ("title", "url", "section", "description")):
+                print(f"Warning: skipping malformed suggestion (missing required fields): {s!r}", file=sys.stderr)
+                continue
+            by_section[s["section"]].append(s)
+
+        for section_name, section_suggestions in by_section.items():
+            try:
+                updated_readme = insert_dated_block_into_section(
+                    updated_readme, section_name, date_str, section_suggestions
+                )
+            except Exception as exc:
+                print(f"Warning: could not insert suggestions for '{section_name}': {exc}", file=sys.stderr)
 
         with open(readme_path, "w", encoding="utf-8") as f:
             f.write(updated_readme)
