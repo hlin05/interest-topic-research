@@ -154,7 +154,7 @@ def main():
 
     client = anthropic.Anthropic(api_key=api_key)
     response = client.messages.create(
-        model="claude-opus-4-6",
+        model="claude-sonnet-4-6",
         max_tokens=4096,
         temperature=0.2,
         system=system_prompt,
