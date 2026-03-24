@@ -168,6 +168,9 @@ def main():
         except Exception as exc:
             errors.append((topic_id, str(exc)))
             print(f"[{topic_id}] ERROR: {exc}", file=sys.stderr)
+            # Print captured stderr if available (e.g. from CalledProcessError)
+            if hasattr(exc, "stderr") and exc.stderr:
+                print(f"[{topic_id}] STDERR:\n{exc.stderr}", file=sys.stderr)
             reset_to_main()
             clean_topic_temp_files(topic_id)
             continue
