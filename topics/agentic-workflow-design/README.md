@@ -59,6 +59,10 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+
+- [HyEvo: Self-Evolving Hybrid Agentic Workflows for Efficient Reasoning](https://arxiv.org/abs/2603.19639) — Proposes a self-evolving hybrid agentic workflow architecture that dynamically adapts workflow structure and tool-use patterns during reasoning, with empirical evaluation on reasoning benchmarks.
+
+- [Utility-Guided Agent Orchestration for Efficient LLM Tool Use](https://arxiv.org/abs/2603.19896) — Presents a utility-guided orchestration framework for selecting and sequencing LLM tool calls efficiently, with empirical benchmarks demonstrating reduced cost and improved task completion.
 ---
 
 ## Contributing
