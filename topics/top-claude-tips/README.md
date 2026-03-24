@@ -38,6 +38,13 @@ This topic is maintained by a weekly Research Assistant Agent. See the [main REA
 
 *Top 3 Claude tips of the week — populated by the weekly Research Assistant Agent.*
 
+### 2026-03-24
+
+- [Trying out Claude's computer use](https://simonwillison.net/2024/Oct/22/claude-computer-use/) — Simon Willison's hands-on walkthrough of Claude's computer use API with working code examples, concrete prompting patterns, and observed failure modes — the most credible practitioner write-up available.
+- [New Claude 3.5 models with computer use (beta) and Claude 3.5 Haiku — Anthropic](https://www.anthropic.com/news/3-5-models-computer-use) — Anthropic's official release post covering prompting best practices, tool-use patterns, and efficiency tips for computer control workflows and the faster/cheaper Haiku model.
+- [Awesome Claude Prompts](https://github.com/awesome-claude/awesome-claude-prompts) — Community-maintained GitHub repo of curated, practical Claude prompt workflows updated post-3.5 release, covering a wide range of use cases with copy-paste-ready examples.
+
+
 ---
 
 ## Contributing
