@@ -17,6 +17,8 @@ Each topic has its own curated awesome list maintained by a weekly Research Assi
 | [Agentic ML](topics/agentic-ml/) | Autonomous AI systems for ML workflows |
 | [Agentic Workflow Design](topics/agentic-workflow-design/) | Patterns, principles, and practices for production-grade agentic systems |
 | [Top Claude Plugins](topics/top-claude-plugins/) | High-signal Claude plugins, MCP servers, and integrations |
+| [RLHF in Agentic Systems](topics/rlhf-agentic/) | Reinforcement learning from human feedback techniques and their use in aligned, adaptive agentic AI |
+| [Harness Engineering](topics/harness-engineering/) | Scaffolding, execution environments, and control infrastructure for running and evaluating AI agents |
 
 ## Prerequisites
 

@@ -69,3 +69,57 @@ topics:
       - "Social-only announcements without a primary source (post/repo/demo)"
     max_entries_per_week: 3
     github_project: null
+
+  - id: harness-engineering
+    name: "Harness Engineering"
+    description: "Design and implementation of agent harnesses — the scaffolding, execution environments, and control infrastructure that run, evaluate, and constrain AI agents"
+    grok_keywords: >-
+      agent harness, agent scaffold, agent execution framework, LLM agent infrastructure,
+      agent runtime, agent evaluation harness, AI agent test harness, agent loop design,
+      agent orchestration infrastructure, agentic scaffolding
+    arxiv_feeds:
+      - { name: "cs.AI", url: "https://rss.arxiv.org/rss/cs.AI" }
+      - { name: "cs.SE", url: "https://rss.arxiv.org/rss/cs.SE" }
+      - { name: "cs.PL", url: "https://rss.arxiv.org/rss/cs.PL" }
+      - { name: "cs.MA", url: "https://rss.arxiv.org/rss/cs.MA" }
+    inclusion_criteria:
+      min_match: 3
+      checklist:
+        - "Defines or implements the execution loop, scaffolding, or runtime environment that hosts an AI agent"
+        - "Manages tool dispatch, context handling, state management, or safety constraints at the harness layer"
+        - "Evaluates or benchmarks agent behavior through controlled harness-mediated interactions"
+        - "Empirical or production evidence of harness design improving reliability, safety, or performance"
+    exclude:
+      - "Agent application logic unrelated to the hosting infrastructure (e.g., pure prompt engineering)"
+      - "Generic CI/CD or test frameworks not specific to AI agent execution"
+      - "Social-only announcements without a primary technical source (paper/repo/blog)"
+      - "Stale resources unless there is a substantive new release/update in the recent window"
+    max_entries_per_week: 3
+    github_project: null
+
+  - id: rlhf-agentic
+    name: "RLHF in Agentic Systems"
+    description: "Reinforcement learning from human feedback techniques and their application in building aligned, adaptive agentic AI systems"
+    grok_keywords: >-
+      RLHF agentic, reinforcement learning human feedback agents,
+      RLAIF agentic systems, reward modeling agents, Constitutional AI agents,
+      human-in-the-loop RL, preference learning autonomous agents
+    arxiv_feeds:
+      - { name: "cs.AI", url: "https://rss.arxiv.org/rss/cs.AI" }
+      - { name: "cs.LG", url: "https://rss.arxiv.org/rss/cs.LG" }
+      - { name: "cs.CL", url: "https://rss.arxiv.org/rss/cs.CL" }
+      - { name: "cs.MA", url: "https://rss.arxiv.org/rss/cs.MA" }
+    inclusion_criteria:
+      min_match: 3
+      checklist:
+        - "Applies RLHF, RLAIF, reward modeling, or preference learning in an agentic or autonomous setting"
+        - "Goal-directed agent behavior shaped by human feedback signals or learned reward models"
+        - "Iterative alignment loop (human ratings, preference comparisons, or AI-generated feedback refine agent policy)"
+        - "Empirical outcome (benchmark, task success rate, safety evaluation, or measurable alignment improvement)"
+    exclude:
+      - "RLHF applied only to static language model fine-tuning without agentic deployment"
+      - "Social-only announcements without a primary technical source (paper/repo/blog)"
+      - "Generic RL tutorials without human feedback or agentic alignment focus"
+      - "Stale resources unless there is a substantive new release/update in the recent window"
+    max_entries_per_week: 3
+    github_project: null
