@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-03-30
+
+- [AIRA_2: Overcoming Bottlenecks in AI Research Agents](https://arxiv.org/abs/2603.26499) — Identifies and addresses architectural bottlenecks in AI research agent pipelines, with implications for orchestration design, execution reliability, and iterative refinement.
+- [Consistency Amplifies: How Behavioral Variance Shapes Agent Accuracy](https://arxiv.org/abs/2603.25764) — Empirical study on how behavioral variance across agent runs affects accuracy, providing grounding for evaluation loop design and reliability practices in agentic workflows.
+
+
 ### 2026-03-24
 
 - [HyEvo: Self-Evolving Hybrid Agentic Workflows for Efficient Reasoning](https://arxiv.org/abs/2603.19639) — Proposes a self-evolving hybrid agentic workflow architecture that dynamically adapts workflow structure and agent composition for efficient multi-step reasoning tasks.
