@@ -154,6 +154,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 - **AutoML-Agent: A Multi-Agent LLM Framework for Full-Pipeline AutoML** (ICML 2025) - [Paper](https://openreview.net/forum?id=p1UBWkOvZm) | [Code](https://github.com/DeepAuto-AI/automl-agent)  
   Multi-agent system with data, model, and operation agents for full-pipeline automation.
 
+- **AutoAgents: Generating Specialized Agents for End-to-End Machine Learning Pipelines** (2024) - [Paper](https://arxiv.org/abs/2410.03521)
+  Dynamically composes specialized agents across data prep, training, and evaluation stages, with reported AutoML task speedups.
+
 - **LightAutoDS-Tab: Multi-AutoML Agentic System for Tabular Data** (2025) - [Paper](https://arxiv.org/abs/2507.13413) | [Code](https://github.com/sb-ai-lab/LADS)  
   Combines LLM-based code generation with multiple AutoML tools (AutoGluon, LightAutoML, FEDOT).
 
