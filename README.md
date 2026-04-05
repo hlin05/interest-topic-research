@@ -198,6 +198,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 - **PiML: Automated Machine Learning Workflow Optimization using LLM Agents** (AutoML 2025) - [Paper](https://openreview.net/forum?id=Nw1qBpsjZz)
   Persistent iterative framework with adaptive memory and systematic debugging.
 
+- **RF-Agent: Automated Reward Function Design via Language Agent Tree Search** (2026) - [Paper](https://arxiv.org/abs/2602.23876) | [Code](https://github.com/deng-ai-lab/RF-Agent)
+  Frames reward-function design as sequential decision-making with MCTS-guided language agents, showing gains across 17 low-level control tasks.
+
 - **SELA: Tree-Search Enhanced LLM Agents for Automated Machine Learning** (2024) - [Paper](https://arxiv.org/abs/2410.17238) | [Code](https://github.com/geekan/MetaGPT/tree/main/metagpt/ext/sela)  
   Leverages MCTS to expand the search space with insight pools.
 
