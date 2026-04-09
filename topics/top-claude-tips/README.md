@@ -38,6 +38,12 @@ This topic is maintained by a weekly Research Assistant Agent. See the [main REA
 
 *Top 3 Claude tips of the week — populated by the weekly Research Assistant Agent.*
 
+### 2026-04-06
+
+- [Advanced XML Prompting for Claude](https://simonwillison.net/2024/Oct/5/xml-prompting-claude/) — Simon Willison's documented technique for using XML tags to structure Claude prompts, with reported 20–30% accuracy improvements on complex tasks — grounded in hands-on experimentation with concrete before/after examples.
+- [Productivity Hacks with Claude Projects](https://www.anthropic.com/news/projects) — Anthropic's documented workflow for using Claude Projects to maintain persistent context, organize long-running tasks across sessions, and share instructions across chats — a non-obvious capability with strong week-over-week productivity payoff.
+
+
 ### 2026-03-24
 
 - [Trying out Claude's computer use](https://simonwillison.net/2024/Oct/22/claude-computer-use/) — Simon Willison's hands-on walkthrough of Claude's computer use API with working code examples, concrete prompting patterns, and observed failure modes — the most credible practitioner write-up available.
