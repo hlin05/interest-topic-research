@@ -190,6 +190,16 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ---
 
+
+---
+
+## Research Papers > Reward Modeling
+
+### 2026-03-30
+
+- [Stabilizing Rubric Integration Training via Decoupled Advantage Normalization](https://arxiv.org/abs/2603.26535) — Introduces decoupled advantage normalization to stabilize RL policy training when reward signals are derived from human-defined rubrics, improving alignment reliability in agentic settings.
+
+
 ## Contributing
 
 Contributions are welcome! To add a project or paper, simply [open an issue](../../issues) or submit a PR.
