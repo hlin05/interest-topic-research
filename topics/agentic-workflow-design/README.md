@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-04-06
+
+- [Holos: A Web-Scale LLM-Based Multi-Agent System for the Agentic Web](https://arxiv.org/abs/2604.02334) — Presents architectural design and orchestration patterns for a web-scale multi-agent system, addressing agent coordination, tool use, and production deployment at scale.
+- [Improving Role Consistency in Multi-Agent Collaboration via Quantitative Role Clarity](https://arxiv.org/abs/2604.02770) — Proposes a quantitative framework for enforcing role clarity in multi-agent collaboration, improving orchestration reliability and agent coordination consistency with empirical evaluation.
+
+
 ### 2026-03-30
 
 - [AIRA_2: Overcoming Bottlenecks in AI Research Agents](https://arxiv.org/abs/2603.26499) — Identifies and addresses architectural bottlenecks in AI research agent pipelines, with implications for orchestration design, execution reliability, and iterative refinement.
