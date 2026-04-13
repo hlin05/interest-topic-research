@@ -181,6 +181,16 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ---
 
+
+---
+
+## Research Papers > Safety & Constraint Infrastructure
+
+### 2026-04-13
+
+- [OpenKedge: Governing Agentic Mutation with Execution-Bound Safety and Evidence Chains](https://arxiv.org/abs/2604.08601) — Proposes a harness-layer governance framework that binds agent mutations to execution-time safety checks and auditable evidence chains — directly addressing constraint infrastructure at the scaffolding level.
+
+
 ## Contributing
 
 Contributions are welcome! To add a project or paper, simply [open an issue](../../issues) or submit a PR.
