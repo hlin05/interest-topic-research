@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-04-13
+
+- [Artifacts as Memory Beyond the Agent Boundary](https://arxiv.org/abs/2604.08756) — Examines how artifacts serve as persistent memory structures that extend state management beyond individual agent boundaries, with implications for multi-agent orchestration and long-horizon workflow design.
+- [SEA-Eval: A Benchmark for Evaluating Self-Evolving Agents Beyond Episodic Assessment](https://arxiv.org/abs/2604.08988) — Proposes a benchmark framework for evaluating self-evolving agents across multi-episode trajectories, providing empirical grounding for evaluation loop design and iterative refinement practices in agentic systems.
+
+
 ### 2026-04-06
 
 - [Holos: A Web-Scale LLM-Based Multi-Agent System for the Agentic Web](https://arxiv.org/abs/2604.02334) — Presents architectural design and orchestration patterns for a web-scale multi-agent system, addressing agent coordination, tool use, and production deployment at scale.
