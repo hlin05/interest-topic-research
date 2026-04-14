@@ -38,6 +38,11 @@ This topic is maintained by a weekly Research Assistant Agent. See the [main REA
 
 *Top 3 Claude tips of the week — populated by the weekly Research Assistant Agent.*
 
+### 2026-04-13
+
+- [Advanced Claude Techniques: Scratchpads & Chain-of-Thought](https://www.promptingguide.ai/models/claude-3-5-sonnet) — Documented best practices for eliciting extended reasoning from Claude via scratchpad-style prompts and chain-of-thought patterns, with concrete techniques for reducing errors on multi-step tasks.
+
+
 ### 2026-04-06
 
 - [Advanced XML Prompting for Claude](https://simonwillison.net/2024/Oct/5/xml-prompting-claude/) — Simon Willison's documented technique for using XML tags to structure Claude prompts, with reported 20–30% accuracy improvements on complex tasks — grounded in hands-on experimentation with concrete before/after examples.
