@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-04-20
+
+- [Experience Compression Spectrum: Unifying Memory, Skills, and Rules in LLM Agents](https://arxiv.org/abs/2604.15877) — Proposes a unified framework spanning memory, skills, and rules as complementary experience compression mechanisms in LLM agents, with architectural implications for state management, tool-use design, and iterative refinement across the agent lifecycle.
+- [Weak-Link Optimization for Multi-Agent Reasoning and Collaboration](https://arxiv.org/abs/2604.15972) — Introduces a weak-link optimization principle for identifying and strengthening bottleneck agents in multi-agent reasoning pipelines, with empirical evaluation on collaborative task performance.
+
+
 ### 2026-04-13
 
 - [Artifacts as Memory Beyond the Agent Boundary](https://arxiv.org/abs/2604.08756) — Examines how artifacts serve as persistent memory structures that extend state management beyond individual agent boundaries, with implications for multi-agent orchestration and long-horizon workflow design.
