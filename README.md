@@ -19,6 +19,7 @@ Each topic has its own curated awesome list maintained by a weekly Research Assi
 | [Top Claude Plugins](topics/top-claude-plugins/) | High-signal Claude plugins, MCP servers, and integrations |
 | [RLHF in Agentic Systems](topics/rlhf-agentic/) | Reinforcement learning from human feedback techniques and their use in aligned, adaptive agentic AI |
 | [Harness Engineering](topics/harness-engineering/) | Scaffolding, execution environments, and control infrastructure for running and evaluating AI agents |
+| [Transformers Beyond NLP](topics/transformers-beyond-nlp/) | Transformer architecture applications outside language processing — biology, genomics, vision, chemistry, time-series, and physics |
 
 ## Prerequisites
 
