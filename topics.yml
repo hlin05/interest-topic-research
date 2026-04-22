@@ -123,3 +123,31 @@ topics:
       - "Stale resources unless there is a substantive new release/update in the recent window"
     max_entries_per_week: 3
     github_project: null
+
+  - id: transformers-beyond-nlp
+    name: "Transformers Beyond NLP"
+    description: "Applications of the transformer architecture outside natural language processing — spanning biology, genomics, protein structure, chemistry, computer vision, time-series forecasting, and physics"
+    grok_keywords: >-
+      transformer biology, protein language model, vision transformer applications,
+      transformer time series, transformer genomics, transformer materials science,
+      transformer weather forecasting, transformer drug discovery, cross-domain transformer
+    arxiv_feeds:
+      - { name: "cs.LG", url: "https://rss.arxiv.org/rss/cs.LG" }
+      - { name: "cs.CV", url: "https://rss.arxiv.org/rss/cs.CV" }
+      - { name: "q-bio.QM", url: "https://rss.arxiv.org/rss/q-bio.QM" }
+      - { name: "physics.ao-ph", url: "https://rss.arxiv.org/rss/physics.ao-ph" }
+      - { name: "cond-mat.mtrl-sci", url: "https://rss.arxiv.org/rss/cond-mat.mtrl-sci" }
+    inclusion_criteria:
+      min_match: 3
+      checklist:
+        - "Applies transformer architecture (self-attention, positional encoding, or encoder/decoder design) to a non-NLP domain"
+        - "Addresses a domain-specific task with measurable performance (structure prediction, property forecasting, classification, generation)"
+        - "Iterative modeling or training loop grounded in domain data (sequences, graphs, spectra, images, signals)"
+        - "Empirical outcome demonstrating advantage of transformer approach (benchmark result, ablation, competition result, or downstream application)"
+    exclude:
+      - "Pure NLP or language model applications (even if the model architecture is novel)"
+      - "Vision-language or multimodal models where the primary contribution is NLP/captioning, not a non-language domain task"
+      - "Social-only announcements without a primary technical source (paper/repo/blog)"
+      - "Stale resources unless there is a substantive new release/update in the recent window"
+    max_entries_per_week: 4
+    github_project: null
