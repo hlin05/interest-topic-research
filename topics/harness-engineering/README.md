@@ -191,6 +191,17 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 - [OpenKedge: Governing Agentic Mutation with Execution-Bound Safety and Evidence Chains](https://arxiv.org/abs/2604.08601) — Proposes a harness-layer governance framework that binds agent mutations to execution-time safety checks and auditable evidence chains — directly addressing constraint infrastructure at the scaffolding level.
 
 
+
+---
+
+## Research Papers > Tool & API Integration Layers
+
+### 2026-05-04
+
+- [Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents](https://arxiv.org/abs/2605.00136) — Empirical study quantifying the performance overhead ('tool-use tax') introduced by harness-layer tool dispatch, providing evidence that harness design choices directly affect agent reliability and efficiency.
+- [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737) — Proposes a harness-layer framework for deciding when agents should invoke tools, optimizing tool dispatch decisions to reduce unnecessary calls and improve execution reliability.
+
+
 ## Contributing
 
 Contributions are welcome! To add a project or paper, simply [open an issue](../../issues) or submit a PR.
