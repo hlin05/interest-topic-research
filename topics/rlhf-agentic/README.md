@@ -200,6 +200,16 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 - [Stabilizing Rubric Integration Training via Decoupled Advantage Normalization](https://arxiv.org/abs/2603.26535) — Introduces decoupled advantage normalization to stabilize RL policy training when reward signals are derived from human-defined rubrics, improving alignment reliability in agentic settings.
 
 
+
+---
+
+## Research Papers > Reward Modeling & Preference Learning
+
+### 2026-05-04
+
+- [PRIME: Preference Rewards with Item Matching Embeddings for Aligning LLM Agents](https://arxiv.org/abs/2410.01718) — Preference-based reward modeling method using item-matching embeddings to align autonomous LLM agents, with empirical evaluation on agentic benchmarks.
+
+
 ## Contributing
 
 Contributions are welcome! To add a project or paper, simply [open an issue](../../issues) or submit a PR.
