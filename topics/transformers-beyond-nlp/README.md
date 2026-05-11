@@ -67,6 +67,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [DNABERT-2](https://github.com/Zhihan1996/DNABERT-2) | Multi-species DNA foundation model using BPE tokenization and ALiBi attention. | ![GitHub stars](https://img.shields.io/github/stars/Zhihan1996/DNABERT-2?style=flat-square) |
 | [Enformer](https://github.com/google-deepmind/deepmind-research/tree/master/enformer) | DeepMind transformer for predicting gene expression from DNA sequence at long range. | ![GitHub stars](https://img.shields.io/github/stars/google-deepmind/deepmind-research?style=flat-square) |
 
+### 2026-05-11
+
+- [Conditional generation of antibody sequences with classifier-guided germline-absorbing discrete diffusion](https://arxiv.org/abs/2605.06720) — Transformer-based discrete diffusion model for conditional antibody sequence generation guided by germline structure, with empirical evaluation on sequence quality and developability metrics.
+
+
 ---
 
 ## Protein & Molecular Structure
@@ -114,6 +119,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [Time-Series Library (TSLib)](https://github.com/thuml/Time-Series-Library) | Tsinghua benchmark suite covering transformer-based time-series forecasting models (PatchTST, iTransformer, etc.). | ![GitHub stars](https://img.shields.io/github/stars/thuml/Time-Series-Library?style=flat-square) |
 | [PatchTST](https://github.com/yuqinie98/PatchTST) | Patch-based ViT-style transformer for long-horizon time-series forecasting with channel independence. | ![GitHub stars](https://img.shields.io/github/stars/yuqinie98/PatchTST?style=flat-square) |
 | [Moirai](https://github.com/SalesforceAIResearch/uni2ts) | Salesforce universal time-series transformer pretrained on LOTSA data for zero-shot forecasting. | ![GitHub stars](https://img.shields.io/github/stars/SalesforceAIResearch/uni2ts?style=flat-square) |
+
+### 2026-05-11
+
+- [Transformer-Based Wildlife Species Classification from Daily Movement Trajectories](https://arxiv.org/abs/2605.06726) — Applies transformer architecture to GPS/accelerometer movement trajectories for wildlife species classification, demonstrating benchmark performance on ecological sensor data.
+
 
 ---
 
