@@ -42,6 +42,9 @@ This topic is maintained by a weekly Research Assistant Agent. See the [main REA
 
 - [Trying out Claude 3.5 Haiku — Speed-Optimized Workflow Patterns](https://simonwillison.net/2024/Oct/24/claude-35-haiku/) — Simon Willison's hands-on real-world tests of Claude 3.5 Haiku for data extraction, SQL generation, and Datasette integration — with concrete prompting patterns and observed speed/cost tradeoffs for high-volume tasks.
 - [Claude 3.5 Haiku — Prompt Engineering Guide](https://www.promptingguide.ai/models/claude-3-5-haiku) — Curated prompting techniques, chain-of-thought examples, and best practices tailored specifically to Claude 3.5 Haiku's strengths and limitations — a practical complement to the existing Claude 3.5 Sonnet entry.
+### 2026-04-27
+
+- [Claude Artifacts Workflow for Rapid Prototyping](https://www.anthropic.com/news/artifacts) — Anthropic's documented Artifacts feature enables real-time iterative editing loops for code, documents, and mini-apps directly in Claude — a non-obvious workflow that significantly accelerates prototyping cycles week over week.
 
 
 ### 2026-04-13
