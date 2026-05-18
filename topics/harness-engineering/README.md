@@ -191,6 +191,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Safety & Constraint Infrastructure
 
+### 2026-05-18
+
+- [Verifiable Agentic Infrastructure: Proof-Derived Authorization for Sovereign AI Systems](https://arxiv.org/abs/2605.15228) — Introduces a harness-layer authorization framework using cryptographic proofs to gate agent actions, providing verifiable safety constraints at the execution infrastructure level.
+
+
 ### 2026-04-13
 
 - [OpenKedge: Governing Agentic Mutation with Execution-Bound Safety and Evidence Chains](https://arxiv.org/abs/2604.08601) — Proposes a harness-layer governance framework that binds agent mutations to execution-time safety checks and auditable evidence chains — directly addressing constraint infrastructure at the scaffolding level.
@@ -201,6 +206,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Tool & API Integration Layers
 
+### 2026-05-18
+
+- [SDOF: Taming the Alignment Tax in Multi-Agent Orchestration with State-Constrained Dispatch](https://arxiv.org/abs/2605.15204) — Proposes a state-constrained dispatch framework for multi-agent orchestration that reduces the alignment tax — empirical evidence that harness-layer dispatch design directly affects agent reliability and safety.
+
+
 ### 2026-05-04
 
 - [Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents](https://arxiv.org/abs/2605.00136) — Empirical study quantifying the performance overhead ('tool-use tax') introduced by harness-layer tool dispatch, providing evidence that harness design choices directly affect agent reliability and efficiency.
@@ -210,6 +220,16 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ### 2026-04-27
 
 - [Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents](https://arxiv.org/abs/2604.22085) — Proposes a harness-layer typed semantic memory system with information-theoretic retrieval for managing agent state across long-horizon tasks.
+
+
+
+---
+
+## Research Papers > Agent-Computer Interfaces & Scaffolding Design
+
+### 2026-05-18
+
+- [SkillSmith: Compiling Agent Skills into Boundary-Guided Runtime Interfaces](https://arxiv.org/abs/2605.15215) — Compiles agent skills into constrained runtime interfaces with explicit action boundaries — a scaffolding-layer approach to constraining agent behavior at the harness level.
 
 
 ## Contributing
