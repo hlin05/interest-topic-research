@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-04-27
+
+- [Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents](https://arxiv.org/abs/2604.22085) — Proposes a typed semantic memory system with information-theoretic retrieval designed for long-horizon agentic tasks, addressing state management, execution-time memory access, and iterative refinement across extended agent trajectories.
+- [From Skills to Talent: Organising Heterogeneous Agents as a Real-World Company](https://arxiv.org/abs/2604.22446) — Presents an organizational framework for structuring heterogeneous multi-agent systems using real-world company hierarchies, with architectural patterns for role specialization, agent orchestration, and collaborative task execution.
+
+
 ### 2026-04-20
 
 - [Experience Compression Spectrum: Unifying Memory, Skills, and Rules in LLM Agents](https://arxiv.org/abs/2604.15877) — Proposes a unified framework spanning memory, skills, and rules as complementary experience compression mechanisms in LLM agents, with architectural implications for state management, tool-use design, and iterative refinement across the agent lifecycle.
