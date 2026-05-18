@@ -63,6 +63,14 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 - [SCALAR: Structured Critic–Actor Loop for Agentic Reasoning](https://arxiv.org/abs/2605.06772) — Proposes a structured critic-actor loop architecture for agentic reasoning, directly instantiating iterative refinement and evaluation loop design patterns with empirical grounding in a physics reasoning domain.
 - [Beyond the Black Box: Interpretability of Agentic AI Tool Use](https://arxiv.org/abs/2605.06890) — Examines interpretability and observability of tool-use decisions in agentic AI systems, providing principled analysis of how agents select and sequence tools across the execution lifecycle.
+### 2026-05-04
+
+- [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737) — Presents a framework for assessing and optimizing when LLM agents invoke tools, directly addressing tool-use decision design across the agent execution lifecycle.
+- [Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents](https://arxiv.org/abs/2605.00136) — Empirically characterizes the overhead and tradeoffs of tool use in LLM agents, providing grounding for architectural decisions about tool integration in agentic workflows.
+### 2026-04-27
+
+- [Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents](https://arxiv.org/abs/2604.22085) — Proposes a typed semantic memory system with information-theoretic retrieval designed for long-horizon agentic tasks, addressing state management, execution-time memory access, and iterative refinement across extended agent trajectories.
+- [From Skills to Talent: Organising Heterogeneous Agents as a Real-World Company](https://arxiv.org/abs/2604.22446) — Presents an organizational framework for structuring heterogeneous multi-agent systems using real-world company hierarchies, with architectural patterns for role specialization, agent orchestration, and collaborative task execution.
 
 
 ### 2026-04-20
