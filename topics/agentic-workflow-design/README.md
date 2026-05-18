@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-05-18
+
+- [SDOF: Taming the Alignment Tax in Multi-Agent Orchestration with State-Constrained Dispatch](https://arxiv.org/abs/2605.15204) — Proposes a state-constrained dispatch framework for multi-agent orchestration that mitigates alignment tax, with architectural patterns for agent coordination, state management, and reliable task routing.
+- [SkillSmith: Compiling Agent Skills into Boundary-Guided Runtime Interfaces](https://arxiv.org/abs/2605.15215) — Introduces a skill compilation framework that translates agent capabilities into boundary-guided runtime interfaces, addressing tool-use design and execution lifecycle management for agentic systems.
+
+
 ### 2026-05-11
 
 - [SCALAR: Structured Critic–Actor Loop for Agentic Reasoning](https://arxiv.org/abs/2605.06772) — Proposes a structured critic-actor loop architecture for agentic reasoning, directly instantiating iterative refinement and evaluation loop design patterns with empirical grounding in a physics reasoning domain.
