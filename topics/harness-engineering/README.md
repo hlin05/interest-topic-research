@@ -69,6 +69,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [smolagents](https://github.com/huggingface/smolagents) | HuggingFace's minimal agent harness with code-as-actions execution and sandboxed Python interpreter. | ![GitHub stars](https://img.shields.io/github/stars/huggingface/smolagents?style=flat-square) |
 | [Claude Code SDK](https://github.com/anthropics/claude-code) | Anthropic's CLI/SDK harness for Claude agents with hooks, permissions, and session management. | ![GitHub stars](https://img.shields.io/github/stars/anthropics/claude-code?style=flat-square) |
 
+### 2026-04-27
+
+- [An Artifact-based Agent Framework for Adaptive and Reproducible Medical Image Processing](https://arxiv.org/abs/2604.21936) — Introduces an artifact-centric agent execution framework with structured state management and reproducible harness-mediated task execution.
+
+
 ### 2026-03-30
 
 - [AutoGen Studio](https://github.com/microsoft/autogen/tree/main/python/packages/autogen-studio) — Microsoft Research's visual IDE and runtime for designing, debugging, and executing multi-agent workflows — includes execution scaffolding, agent session management, and interactive harness-level debugging.
@@ -200,6 +205,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 - [Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents](https://arxiv.org/abs/2605.00136) — Empirical study quantifying the performance overhead ('tool-use tax') introduced by harness-layer tool dispatch, providing evidence that harness design choices directly affect agent reliability and efficiency.
 - [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737) — Proposes a harness-layer framework for deciding when agents should invoke tools, optimizing tool dispatch decisions to reduce unnecessary calls and improve execution reliability.
+## Research Papers > Context & State Management
+
+### 2026-04-27
+
+- [Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents](https://arxiv.org/abs/2604.22085) — Proposes a harness-layer typed semantic memory system with information-theoretic retrieval for managing agent state across long-horizon tasks.
 
 
 ## Contributing
