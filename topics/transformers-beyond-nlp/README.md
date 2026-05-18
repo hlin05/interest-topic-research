@@ -70,6 +70,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ### 2026-05-11
 
 - [Conditional generation of antibody sequences with classifier-guided germline-absorbing discrete diffusion](https://arxiv.org/abs/2605.06720) — Transformer-based discrete diffusion model for conditional antibody sequence generation guided by germline structure, with empirical evaluation on sequence quality and developability metrics.
+### 2026-04-27
+
+- [scGPT-pro](https://arxiv.org/abs/2410.05879) — Efficient self-supervised transformer foundation model for single-cell genomics, scaling to large cell atlases for cell-type annotation, gene perturbation prediction, and multi-omics integration.
 
 
 ---
@@ -84,6 +87,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [OpenFold](https://github.com/aqlaboratory/openfold) | Open-source reimplementation of AlphaFold2's Evoformer transformer for structure prediction. | ![GitHub stars](https://img.shields.io/github/stars/aqlaboratory/openfold?style=flat-square) |
 | [Uni-Mol](https://github.com/deepmodeling/Uni-Mol) | DPTECH universal molecular transformer pretrained on 3D conformations for property prediction and docking. | ![GitHub stars](https://img.shields.io/github/stars/deepmodeling/Uni-Mol?style=flat-square) |
 
+### 2026-04-27
+
+- [ProteinNPT](https://arxiv.org/abs/2410.00149) — Combines transformers with normalizing flows for property-conditioned protein sequence generation, enabling controllable design of proteins with target fitness or stability profiles.
+
+
 ---
 
 ## Chemistry & Materials Science
@@ -95,6 +103,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [ChemBERTa](https://github.com/seyonechithrananda/bert-loves-chemistry) | RoBERTa pretrained on SMILES strings for molecular property prediction. | ![GitHub stars](https://img.shields.io/github/stars/seyonechithrananda/bert-loves-chemistry?style=flat-square) |
 | [MolBERT](https://github.com/BenevolentAI/MolBERT) | BenevolentAI BERT model for learning molecular representations from SMILES. | ![GitHub stars](https://img.shields.io/github/stars/BenevolentAI/MolBERT?style=flat-square) |
 | [Graphormer](https://github.com/microsoft/Graphormer) | Microsoft Research transformer for molecular graph property prediction; winner of OGB-LSC. | ![GitHub stars](https://img.shields.io/github/stars/microsoft/Graphormer?style=flat-square) |
+
+### 2026-04-27
+
+- [EGTP: Equivariant Graph Transformer Potentials](https://arxiv.org/abs/2410.05388) — Equivariant graph transformer for learning interatomic potentials, combining SE(3)-equivariance with transformer attention for accurate molecular dynamics and materials property prediction.
+
 
 ---
 
@@ -123,6 +136,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ### 2026-05-11
 
 - [Transformer-Based Wildlife Species Classification from Daily Movement Trajectories](https://arxiv.org/abs/2605.06726) — Applies transformer architecture to GPS/accelerometer movement trajectories for wildlife species classification, demonstrating benchmark performance on ecological sensor data.
+### 2026-04-27
+
+- [UniTime: A Language-Empowered Unified Model for Cross-Domain Time Series Forecasting](https://arxiv.org/abs/2310.02862) — Universal transformer model with domain-aware time tokenizers enabling zero-shot and few-shot cross-domain time-series forecasting across heterogeneous datasets.
 
 
 ---
