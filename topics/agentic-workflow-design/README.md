@@ -59,6 +59,10 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-05-11
+
+- [SCALAR: Structured Critic–Actor Loop for Agentic Reasoning](https://arxiv.org/abs/2605.06772) — Proposes a structured critic-actor loop architecture for agentic reasoning, directly instantiating iterative refinement and evaluation loop design patterns with empirical grounding in a physics reasoning domain.
+- [Beyond the Black Box: Interpretability of Agentic AI Tool Use](https://arxiv.org/abs/2605.06890) — Examines interpretability and observability of tool-use decisions in agentic AI systems, providing principled analysis of how agents select and sequence tools across the execution lifecycle.
 ### 2026-05-04
 
 - [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737) — Presents a framework for assessing and optimizing when LLM agents invoke tools, directly addressing tool-use decision design across the agent execution lifecycle.
