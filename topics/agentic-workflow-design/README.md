@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-05-25
+
+- [EVE-Agent: Evidence-Verifiable Self-Evolving Agents](https://arxiv.org/abs/2605.22905) — Proposes an evidence-verifiable self-evolving agent architecture that integrates verification loops and iterative self-improvement into the agent lifecycle, with empirical evaluation on complex reasoning tasks.
+- [BOHM: Zero-Cost Hierarchical Attribution for Compound AI Systems](https://arxiv.org/abs/2605.22866) — Introduces a zero-cost hierarchical attribution framework for compound AI systems, enabling fine-grained observability and credit assignment across multi-component agentic pipelines without runtime overhead.
+
+
 ### 2026-05-11
 
 - [SCALAR: Structured Critic–Actor Loop for Agentic Reasoning](https://arxiv.org/abs/2605.06772) — Proposes a structured critic-actor loop architecture for agentic reasoning, directly instantiating iterative refinement and evaluation loop design patterns with empirical grounding in a physics reasoning domain.
