@@ -201,15 +201,35 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Tool & API Integration Layers
 
+### 2026-06-01
+
+- [MAVEN: Improving Generalization in Agentic Tool Calling](https://arxiv.org/abs/2605.30738) — Addresses generalization failures in harness-layer tool dispatch for agentic systems, proposing and empirically validating improvements to tool-calling infrastructure.
+
+
 ### 2026-05-04
 
 - [Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents](https://arxiv.org/abs/2605.00136) — Empirical study quantifying the performance overhead ('tool-use tax') introduced by harness-layer tool dispatch, providing evidence that harness design choices directly affect agent reliability and efficiency.
 - [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737) — Proposes a harness-layer framework for deciding when agents should invoke tools, optimizing tool dispatch decisions to reduce unnecessary calls and improve execution reliability.
 ## Research Papers > Context & State Management
 
+### 2026-06-01
+
+- [Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785) — Proposes a harness-layer context management approach that adapts context handling to agent needs across long-horizon tasks, with empirical evaluation of task performance.
+
+
 ### 2026-04-27
 
 - [Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents](https://arxiv.org/abs/2604.22085) — Proposes a harness-layer typed semantic memory system with information-theoretic retrieval for managing agent state across long-horizon tasks.
+
+
+
+---
+
+## Research Papers > Agent-Computer Interfaces & Scaffolding Design
+
+### 2026-06-01
+
+- [Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents](https://arxiv.org/abs/2605.30621) — Disentangles harness-layer scaffold updates from genuine capability gains in self-evolving agents, providing empirical evidence that harness design choices confound agent performance measurement.
 
 
 ## Contributing
