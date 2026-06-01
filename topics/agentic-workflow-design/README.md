@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-06-01
+
+- [MAVEN: Improving Generalization in Agentic Tool Calling](https://arxiv.org/abs/2605.30738) — Proposes MAVEN, a framework for improving generalization in agentic tool calling, addressing tool-use design, execution reliability, and empirical evaluation across diverse agentic tasks.
+- [Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785) — Presents a context management framework designed for long-horizon agentic tasks, addressing state management, execution-time context adaptation, and iterative refinement across extended agent trajectories.
+
+
 ### 2026-05-11
 
 - [SCALAR: Structured Critic–Actor Loop for Agentic Reasoning](https://arxiv.org/abs/2605.06772) — Proposes a structured critic-actor loop architecture for agentic reasoning, directly instantiating iterative refinement and evaluation loop design patterns with empirical grounding in a physics reasoning domain.
