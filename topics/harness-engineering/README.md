@@ -191,6 +191,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Safety & Constraint Infrastructure
 
+### 2026-06-08
+
+- [Attack Selection in Agentic AI Control Evaluations Meaningfully Decreases Safety](https://arxiv.org/abs/2606.06529) — Empirical study showing that attack selection methodology in harness-mediated AI control evaluations significantly affects measured safety outcomes — evidence that harness evaluation design choices are not neutral.
+
+
 ### 2026-04-13
 
 - [OpenKedge: Governing Agentic Mutation with Execution-Bound Safety and Evidence Chains](https://arxiv.org/abs/2604.08601) — Proposes a harness-layer governance framework that binds agent mutations to execution-time safety checks and auditable evidence chains — directly addressing constraint infrastructure at the scaffolding level.
@@ -210,6 +215,16 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ### 2026-04-27
 
 - [Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents](https://arxiv.org/abs/2604.22085) — Proposes a harness-layer typed semantic memory system with information-theoretic retrieval for managing agent state across long-horizon tasks.
+
+
+
+---
+
+## Research Papers > Agent-Computer Interfaces & Scaffolding Design
+
+### 2026-06-08
+
+- [Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory](https://arxiv.org/abs/2606.06523) — Applies formal modeling and verification (Lean4) to agent workflows and execution trajectories, providing harness-layer correctness guarantees for agent execution loops and state transitions.
 
 
 ## Contributing
