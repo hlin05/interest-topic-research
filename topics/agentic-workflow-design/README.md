@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-06-15
+
+- [Orchestra-o1: Omnimodal Agent Orchestration](https://arxiv.org/abs/2606.13707) — Presents an omnimodal agent orchestration architecture addressing multi-modal tool use, agent coordination patterns, and execution design across the agent lifecycle.
+- [WorkBench Revisited: Workplace Agents Two Years On](https://arxiv.org/abs/2606.13715) — Longitudinal reassessment of workplace agentic systems two years after initial deployment, providing empirical grounding on production reliability, evaluation loops, and agent workflow design in real-world settings.
+
+
 ### 2026-05-11
 
 - [SCALAR: Structured Critic–Actor Loop for Agentic Reasoning](https://arxiv.org/abs/2605.06772) — Proposes a structured critic-actor loop architecture for agentic reasoning, directly instantiating iterative refinement and evaluation loop design patterns with empirical grounding in a physics reasoning domain.
