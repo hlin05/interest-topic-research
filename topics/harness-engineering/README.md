@@ -94,6 +94,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [MLE-bench](https://github.com/openai/mle-bench) | Harness running agents against 75 Kaggle competitions in isolated Docker environments with metric validation. | ![GitHub stars](https://img.shields.io/github/stars/openai/mle-bench?style=flat-square) |
 | [WebArena](https://github.com/web-arena-x/webarena) | Self-hosted web environment harness with deterministic task replay for evaluating browser-using agents. | ![GitHub stars](https://img.shields.io/github/stars/web-arena-x/webarena?style=flat-square) |
 
+### 2026-06-15
+
+- [WorkBench Revisited: Workplace Agents Two Years On](https://arxiv.org/abs/2606.13715) — Longitudinal re-evaluation of workplace agent benchmarks two years on, assessing how evaluation harness design and agent capabilities have evolved.
+
+
 ---
 
 ## Tool & API Integration Layers
@@ -190,6 +195,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ---
 
 ## Research Papers > Safety & Constraint Infrastructure
+
+### 2026-06-15
+
+- [Capability Minimization as a Safety Primitive: Risk-Aware Causal Gating for Least-Privilege LLM Agents](https://arxiv.org/abs/2606.13884) — Proposes risk-aware causal gating to enforce least-privilege execution in LLM agents, implementing capability minimization as a harness-layer safety primitive.
+
 
 ### 2026-04-13
 
