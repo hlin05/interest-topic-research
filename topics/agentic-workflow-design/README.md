@@ -63,6 +63,10 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 - [EVE-Agent: Evidence-Verifiable Self-Evolving Agents](https://arxiv.org/abs/2605.22905) — Proposes an evidence-verifiable self-evolving agent architecture that integrates verification loops and iterative self-improvement into the agent lifecycle, with empirical evaluation on complex reasoning tasks.
 - [BOHM: Zero-Cost Hierarchical Attribution for Compound AI Systems](https://arxiv.org/abs/2605.22866) — Introduces a zero-cost hierarchical attribution framework for compound AI systems, enabling fine-grained observability and credit assignment across multi-component agentic pipelines without runtime overhead.
+### 2026-05-18
+
+- [SDOF: Taming the Alignment Tax in Multi-Agent Orchestration with State-Constrained Dispatch](https://arxiv.org/abs/2605.15204) — Proposes a state-constrained dispatch framework for multi-agent orchestration that mitigates alignment tax, with architectural patterns for agent coordination, state management, and reliable task routing.
+- [SkillSmith: Compiling Agent Skills into Boundary-Guided Runtime Interfaces](https://arxiv.org/abs/2605.15215) — Introduces a skill compilation framework that translates agent capabilities into boundary-guided runtime interfaces, addressing tool-use design and execution lifecycle management for agentic systems.
 
 
 ### 2026-05-11
