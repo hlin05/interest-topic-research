@@ -200,6 +200,16 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 - [Stabilizing Rubric Integration Training via Decoupled Advantage Normalization](https://arxiv.org/abs/2603.26535) — Introduces decoupled advantage normalization to stabilize RL policy training when reward signals are derived from human-defined rubrics, improving alignment reliability in agentic settings.
 
 
+
+---
+
+## Research Papers > Constitutional AI & RLAIF
+
+### 2026-05-18
+
+- [ICRL: Learning to Internalize Self-Critique with Reinforcement Learning](https://arxiv.org/abs/2605.15224) — Trains agents to internalize self-critique via RL, implementing an iterative RLAIF-style alignment loop where AI-generated critique signals refine agent policy without requiring human annotations at each step.
+
+
 ## Contributing
 
 Contributions are welcome! To add a project or paper, simply [open an issue](../../issues) or submit a PR.
