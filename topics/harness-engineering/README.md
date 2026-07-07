@@ -217,6 +217,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 - [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737) — Proposes a harness-layer framework for deciding when agents should invoke tools, optimizing tool dispatch decisions to reduce unnecessary calls and improve execution reliability.
 ## Research Papers > Context & State Management
 
+### 2026-05-25
+
+- [Parallel Context Compaction for Long-Horizon LLM Agent Serving](https://arxiv.org/abs/2605.23296) — Proposes a harness-layer parallel context compaction mechanism for long-horizon agent serving, reducing context overhead while preserving agent state continuity — with empirical evidence of serving efficiency gains.
+
+
 ### 2026-04-27
 
 - [Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents](https://arxiv.org/abs/2604.22085) — Proposes a harness-layer typed semantic memory system with information-theoretic retrieval for managing agent state across long-horizon tasks.
