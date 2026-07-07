@@ -59,6 +59,10 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-06-01
+
+- [MAVEN: Improving Generalization in Agentic Tool Calling](https://arxiv.org/abs/2605.30738) — Proposes MAVEN, a framework for improving generalization in agentic tool calling, addressing tool-use design, execution reliability, and empirical evaluation across diverse agentic tasks.
+- [Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785) — Presents a context management framework designed for long-horizon agentic tasks, addressing state management, execution-time context adaptation, and iterative refinement across extended agent trajectories.
 ### 2026-05-25
 
 - [EVE-Agent: Evidence-Verifiable Self-Evolving Agents](https://arxiv.org/abs/2605.22905) — Proposes an evidence-verifiable self-evolving agent architecture that integrates verification loops and iterative self-improvement into the agent lifecycle, with empirical evaluation on complex reasoning tasks.
