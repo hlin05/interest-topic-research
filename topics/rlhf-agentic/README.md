@@ -218,6 +218,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ### 2026-06-01
 
 - [Planner-Centric Reinforcement Learning for Deep Research with Structure-Aware Reward](https://arxiv.org/abs/2605.30824) — RL framework for deep-research agents using a planner-centric architecture and structure-aware reward signals to guide multi-step information gathering and synthesis tasks.
+## Research Papers > Constitutional AI & RLAIF
+
+### 2026-05-18
+
+- [ICRL: Learning to Internalize Self-Critique with Reinforcement Learning](https://arxiv.org/abs/2605.15224) — Trains agents to internalize self-critique via RL, implementing an iterative RLAIF-style alignment loop where AI-generated critique signals refine agent policy without requiring human annotations at each step.
 
 
 ## Contributing
