@@ -133,6 +133,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [PatchTST](https://github.com/yuqinie98/PatchTST) | Patch-based ViT-style transformer for long-horizon time-series forecasting with channel independence. | ![GitHub stars](https://img.shields.io/github/stars/yuqinie98/PatchTST?style=flat-square) |
 | [Moirai](https://github.com/SalesforceAIResearch/uni2ts) | Salesforce universal time-series transformer pretrained on LOTSA data for zero-shot forecasting. | ![GitHub stars](https://img.shields.io/github/stars/SalesforceAIResearch/uni2ts?style=flat-square) |
 
+### 2026-06-01
+
+- [Unicorn: Scaling High-Dimensional Time Series Forecasting via Universal Correlation Modeling](https://arxiv.org/abs/2605.30376) — Transformer-based universal correlation model for scaling high-dimensional time-series forecasting, addressing cross-variate dependencies with benchmark results on standard forecasting suites.
+
+
 ### 2026-05-11
 
 - [Transformer-Based Wildlife Species Classification from Daily Movement Trajectories](https://arxiv.org/abs/2605.06726) — Applies transformer architecture to GPS/accelerometer movement trajectories for wildlife species classification, demonstrating benchmark performance on ecological sensor data.
