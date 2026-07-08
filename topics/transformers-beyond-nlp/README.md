@@ -104,6 +104,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [MolBERT](https://github.com/BenevolentAI/MolBERT) | BenevolentAI BERT model for learning molecular representations from SMILES. | ![GitHub stars](https://img.shields.io/github/stars/BenevolentAI/MolBERT?style=flat-square) |
 | [Graphormer](https://github.com/microsoft/Graphormer) | Microsoft Research transformer for molecular graph property prediction; winner of OGB-LSC. | ![GitHub stars](https://img.shields.io/github/stars/microsoft/Graphormer?style=flat-square) |
 
+### 2026-06-08
+
+- [Materials Transformer for Crystal Structure Generation](https://www.nature.com/articles/s41524-024-01389-2) — Masked-language-model-style transformer applied to inorganic crystal structures for de novo materials discovery, published in npj Computational Materials.
+
+
 ### 2026-04-27
 
 - [EGTP: Equivariant Graph Transformer Potentials](https://arxiv.org/abs/2410.05388) — Equivariant graph transformer for learning interatomic potentials, combining SE(3)-equivariance with transformer attention for accurate molecular dynamics and materials property prediction.
@@ -121,6 +126,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [Segment Anything (SAM)](https://github.com/facebookresearch/segment-anything) | Meta's promptable image segmentation model using a transformer-based mask decoder. | ![GitHub stars](https://img.shields.io/github/stars/facebookresearch/segment-anything?style=flat-square) |
 | [DINO / DINOv2](https://github.com/facebookresearch/dinov2) | Meta self-supervised vision transformer with strong spatial features for segmentation and retrieval. | ![GitHub stars](https://img.shields.io/github/stars/facebookresearch/dinov2?style=flat-square) |
 
+### 2026-06-08
+
+- [Vision Transformer for cryo-EM Particle Picking](https://arxiv.org/abs/2410.01234) — ViT-based model for automated particle picking in cryo-electron microscopy images, enabling high-throughput 3D structural reconstruction.
+
+
 ---
 
 ## Time-Series & Signals
@@ -132,6 +142,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [Time-Series Library (TSLib)](https://github.com/thuml/Time-Series-Library) | Tsinghua benchmark suite covering transformer-based time-series forecasting models (PatchTST, iTransformer, etc.). | ![GitHub stars](https://img.shields.io/github/stars/thuml/Time-Series-Library?style=flat-square) |
 | [PatchTST](https://github.com/yuqinie98/PatchTST) | Patch-based ViT-style transformer for long-horizon time-series forecasting with channel independence. | ![GitHub stars](https://img.shields.io/github/stars/yuqinie98/PatchTST?style=flat-square) |
 | [Moirai](https://github.com/SalesforceAIResearch/uni2ts) | Salesforce universal time-series transformer pretrained on LOTSA data for zero-shot forecasting. | ![GitHub stars](https://img.shields.io/github/stars/SalesforceAIResearch/uni2ts?style=flat-square) |
+
+### 2026-06-01
+
+- [Unicorn: Scaling High-Dimensional Time Series Forecasting via Universal Correlation Modeling](https://arxiv.org/abs/2605.30376) — Transformer-based universal correlation model for scaling high-dimensional time-series forecasting, addressing cross-variate dependencies with benchmark results on standard forecasting suites.
+
 
 ### 2026-05-11
 

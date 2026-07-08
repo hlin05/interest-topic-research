@@ -203,6 +203,21 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ---
 
+## Research Papers > Safety & Alignment in Agents
+
+### 2026-06-01
+
+- [COMPASS: Cognitive MCTS-Guided Process Alignment for Safe Search Agents](https://arxiv.org/abs/2605.30838) — MCTS-guided process alignment framework for safe search agents, combining cognitive planning with iterative alignment to improve safety and task success in agentic search settings.
+
+
+
+---
+
+## Research Papers > RLHF for Agentic Systems
+
+### 2026-06-01
+
+- [Planner-Centric Reinforcement Learning for Deep Research with Structure-Aware Reward](https://arxiv.org/abs/2605.30824) — RL framework for deep-research agents using a planner-centric architecture and structure-aware reward signals to guide multi-step information gathering and synthesis tasks.
 ## Research Papers > Constitutional AI & RLAIF
 
 ### 2026-05-18
