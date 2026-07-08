@@ -63,6 +63,18 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 - [Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory](https://arxiv.org/abs/2606.06523) — Applies formal modeling and verification (via Lean4) to agent workflows and execution trajectories, providing rigorous architectural grounding for correctness, state management, and evaluation of agentic systems.
 - [Declarative Skills for AI Agents in Knowledge-Grounded Tool-Use Workflows](https://arxiv.org/abs/2606.06923) — Proposes a declarative skill abstraction for structuring knowledge-grounded tool-use workflows in AI agents, addressing tool selection, workflow composition, and execution design across the agent lifecycle.
+### 2026-06-01
+
+- [MAVEN: Improving Generalization in Agentic Tool Calling](https://arxiv.org/abs/2605.30738) — Proposes MAVEN, a framework for improving generalization in agentic tool calling, addressing tool-use design, execution reliability, and empirical evaluation across diverse agentic tasks.
+- [Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785) — Presents a context management framework designed for long-horizon agentic tasks, addressing state management, execution-time context adaptation, and iterative refinement across extended agent trajectories.
+### 2026-05-25
+
+- [EVE-Agent: Evidence-Verifiable Self-Evolving Agents](https://arxiv.org/abs/2605.22905) — Proposes an evidence-verifiable self-evolving agent architecture that integrates verification loops and iterative self-improvement into the agent lifecycle, with empirical evaluation on complex reasoning tasks.
+- [BOHM: Zero-Cost Hierarchical Attribution for Compound AI Systems](https://arxiv.org/abs/2605.22866) — Introduces a zero-cost hierarchical attribution framework for compound AI systems, enabling fine-grained observability and credit assignment across multi-component agentic pipelines without runtime overhead.
+### 2026-05-18
+
+- [SDOF: Taming the Alignment Tax in Multi-Agent Orchestration with State-Constrained Dispatch](https://arxiv.org/abs/2605.15204) — Proposes a state-constrained dispatch framework for multi-agent orchestration that mitigates alignment tax, with architectural patterns for agent coordination, state management, and reliable task routing.
+- [SkillSmith: Compiling Agent Skills into Boundary-Guided Runtime Interfaces](https://arxiv.org/abs/2605.15215) — Introduces a skill compilation framework that translates agent capabilities into boundary-guided runtime interfaces, addressing tool-use design and execution lifecycle management for agentic systems.
 
 
 ### 2026-05-11
