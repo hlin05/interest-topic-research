@@ -206,6 +206,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Tool & API Integration Layers
 
+### 2026-06-01
+
+- [MAVEN: Improving Generalization in Agentic Tool Calling](https://arxiv.org/abs/2605.30738) — Addresses generalization failures in harness-layer tool dispatch for agentic systems, proposing and empirically validating improvements to tool-calling infrastructure.
 ### 2026-05-18
 
 - [SDOF: Taming the Alignment Tax in Multi-Agent Orchestration with State-Constrained Dispatch](https://arxiv.org/abs/2605.15204) — Proposes a state-constrained dispatch framework for multi-agent orchestration that reduces the alignment tax — empirical evidence that harness-layer dispatch design directly affects agent reliability and safety.
@@ -217,6 +220,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 - [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737) — Proposes a harness-layer framework for deciding when agents should invoke tools, optimizing tool dispatch decisions to reduce unnecessary calls and improve execution reliability.
 ## Research Papers > Context & State Management
 
+### 2026-06-01
+
+- [Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785) — Proposes a harness-layer context management approach that adapts context handling to agent needs across long-horizon tasks, with empirical evaluation of task performance.
 ### 2026-05-25
 
 - [Parallel Context Compaction for Long-Horizon LLM Agent Serving](https://arxiv.org/abs/2605.23296) — Proposes a harness-layer parallel context compaction mechanism for long-horizon agent serving, reducing context overhead while preserving agent state continuity — with empirical evidence of serving efficiency gains.
@@ -232,6 +238,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Agent-Computer Interfaces & Scaffolding Design
 
+### 2026-06-01
+
+- [Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents](https://arxiv.org/abs/2605.30621) — Disentangles harness-layer scaffold updates from genuine capability gains in self-evolving agents, providing empirical evidence that harness design choices confound agent performance measurement.
 ### 2026-05-18
 
 - [SkillSmith: Compiling Agent Skills into Boundary-Guided Runtime Interfaces](https://arxiv.org/abs/2605.15215) — Compiles agent skills into constrained runtime interfaces with explicit action boundaries — a scaffolding-layer approach to constraining agent behavior at the harness level.
