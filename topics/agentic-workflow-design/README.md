@@ -59,6 +59,10 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-06-08
+
+- [Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory](https://arxiv.org/abs/2606.06523) — Applies formal modeling and verification (via Lean4) to agent workflows and execution trajectories, providing rigorous architectural grounding for correctness, state management, and evaluation of agentic systems.
+- [Declarative Skills for AI Agents in Knowledge-Grounded Tool-Use Workflows](https://arxiv.org/abs/2606.06923) — Proposes a declarative skill abstraction for structuring knowledge-grounded tool-use workflows in AI agents, addressing tool selection, workflow composition, and execution design across the agent lifecycle.
 ### 2026-06-01
 
 - [MAVEN: Improving Generalization in Agentic Tool Calling](https://arxiv.org/abs/2605.30738) — Proposes MAVEN, a framework for improving generalization in agentic tool calling, addressing tool-use design, execution reliability, and empirical evaluation across diverse agentic tasks.
