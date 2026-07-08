@@ -59,6 +59,10 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-06-15
+
+- [Orchestra-o1: Omnimodal Agent Orchestration](https://arxiv.org/abs/2606.13707) — Presents an omnimodal agent orchestration architecture addressing multi-modal tool use, agent coordination patterns, and execution design across the agent lifecycle.
+- [WorkBench Revisited: Workplace Agents Two Years On](https://arxiv.org/abs/2606.13715) — Longitudinal reassessment of workplace agentic systems two years after initial deployment, providing empirical grounding on production reliability, evaluation loops, and agent workflow design in real-world settings.
 ### 2026-06-08
 
 - [Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory](https://arxiv.org/abs/2606.06523) — Applies formal modeling and verification (via Lean4) to agent workflows and execution trajectories, providing rigorous architectural grounding for correctness, state management, and evaluation of agentic systems.
