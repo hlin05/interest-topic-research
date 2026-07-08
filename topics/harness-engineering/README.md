@@ -191,6 +191,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Safety & Constraint Infrastructure
 
+### 2026-06-08
+
+- [Attack Selection in Agentic AI Control Evaluations Meaningfully Decreases Safety](https://arxiv.org/abs/2606.06529) — Empirical study showing that attack selection methodology in harness-mediated AI control evaluations significantly affects measured safety outcomes — evidence that harness evaluation design choices are not neutral.
 ### 2026-05-18
 
 - [Verifiable Agentic Infrastructure: Proof-Derived Authorization for Sovereign AI Systems](https://arxiv.org/abs/2605.15228) — Introduces a harness-layer authorization framework using cryptographic proofs to gate agent actions, providing verifiable safety constraints at the execution infrastructure level.
@@ -238,6 +241,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Agent-Computer Interfaces & Scaffolding Design
 
+### 2026-06-08
+
+- [Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory](https://arxiv.org/abs/2606.06523) — Applies formal modeling and verification (Lean4) to agent workflows and execution trajectories, providing harness-layer correctness guarantees for agent execution loops and state transitions.
 ### 2026-06-01
 
 - [Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents](https://arxiv.org/abs/2605.30621) — Disentangles harness-layer scaffold updates from genuine capability gains in self-evolving agents, providing empirical evidence that harness design choices confound agent performance measurement.
