@@ -191,6 +191,14 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Safety & Constraint Infrastructure
 
+### 2026-06-08
+
+- [Attack Selection in Agentic AI Control Evaluations Meaningfully Decreases Safety](https://arxiv.org/abs/2606.06529) — Empirical study showing that attack selection methodology in harness-mediated AI control evaluations significantly affects measured safety outcomes — evidence that harness evaluation design choices are not neutral.
+### 2026-05-18
+
+- [Verifiable Agentic Infrastructure: Proof-Derived Authorization for Sovereign AI Systems](https://arxiv.org/abs/2605.15228) — Introduces a harness-layer authorization framework using cryptographic proofs to gate agent actions, providing verifiable safety constraints at the execution infrastructure level.
+
+
 ### 2026-04-13
 
 - [OpenKedge: Governing Agentic Mutation with Execution-Bound Safety and Evidence Chains](https://arxiv.org/abs/2604.08601) — Proposes a harness-layer governance framework that binds agent mutations to execution-time safety checks and auditable evidence chains — directly addressing constraint infrastructure at the scaffolding level.
@@ -201,15 +209,47 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Tool & API Integration Layers
 
+### 2026-06-01
+
+- [MAVEN: Improving Generalization in Agentic Tool Calling](https://arxiv.org/abs/2605.30738) — Addresses generalization failures in harness-layer tool dispatch for agentic systems, proposing and empirically validating improvements to tool-calling infrastructure.
+### 2026-05-18
+
+- [SDOF: Taming the Alignment Tax in Multi-Agent Orchestration with State-Constrained Dispatch](https://arxiv.org/abs/2605.15204) — Proposes a state-constrained dispatch framework for multi-agent orchestration that reduces the alignment tax — empirical evidence that harness-layer dispatch design directly affects agent reliability and safety.
+
+
 ### 2026-05-04
 
 - [Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents](https://arxiv.org/abs/2605.00136) — Empirical study quantifying the performance overhead ('tool-use tax') introduced by harness-layer tool dispatch, providing evidence that harness design choices directly affect agent reliability and efficiency.
 - [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737) — Proposes a harness-layer framework for deciding when agents should invoke tools, optimizing tool dispatch decisions to reduce unnecessary calls and improve execution reliability.
 ## Research Papers > Context & State Management
 
+### 2026-06-01
+
+- [Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785) — Proposes a harness-layer context management approach that adapts context handling to agent needs across long-horizon tasks, with empirical evaluation of task performance.
+### 2026-05-25
+
+- [Parallel Context Compaction for Long-Horizon LLM Agent Serving](https://arxiv.org/abs/2605.23296) — Proposes a harness-layer parallel context compaction mechanism for long-horizon agent serving, reducing context overhead while preserving agent state continuity — with empirical evidence of serving efficiency gains.
+
+
 ### 2026-04-27
 
 - [Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents](https://arxiv.org/abs/2604.22085) — Proposes a harness-layer typed semantic memory system with information-theoretic retrieval for managing agent state across long-horizon tasks.
+
+
+
+---
+
+## Research Papers > Agent-Computer Interfaces & Scaffolding Design
+
+### 2026-06-08
+
+- [Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory](https://arxiv.org/abs/2606.06523) — Applies formal modeling and verification (Lean4) to agent workflows and execution trajectories, providing harness-layer correctness guarantees for agent execution loops and state transitions.
+### 2026-06-01
+
+- [Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents](https://arxiv.org/abs/2605.30621) — Disentangles harness-layer scaffold updates from genuine capability gains in self-evolving agents, providing empirical evidence that harness design choices confound agent performance measurement.
+### 2026-05-18
+
+- [SkillSmith: Compiling Agent Skills into Boundary-Guided Runtime Interfaces](https://arxiv.org/abs/2605.15215) — Compiles agent skills into constrained runtime interfaces with explicit action boundaries — a scaffolding-layer approach to constraining agent behavior at the harness level.
 
 
 ## Contributing
