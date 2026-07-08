@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-06-29
+
+- [Towards Reliable and Robust LLM Planning: Symbolic Feedback-Driven Iterative Self-Refinement Framework](https://arxiv.org/abs/2606.27757) — Proposes a symbolic feedback-driven iterative self-refinement framework for LLM planning, addressing reliability, recovery loops, and structured evaluation feedback across agent execution stages.
+- [Grounded Iterative Language Planning: How Parameterized World Models Reduce Hallucination Propagation in LLM Agents](https://arxiv.org/abs/2606.27806) — Introduces grounded iterative language planning with parameterized world models to reduce hallucination propagation in LLM agents, with empirical analysis of planning reliability across multi-step agentic tasks.
+
+
 ### 2026-06-15
 
 - [Orchestra-o1: Omnimodal Agent Orchestration](https://arxiv.org/abs/2606.13707) — Presents an omnimodal agent orchestration architecture addressing multi-modal tool use, agent coordination patterns, and execution design across the agent lifecycle.
