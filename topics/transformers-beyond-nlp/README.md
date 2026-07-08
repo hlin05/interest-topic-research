@@ -104,6 +104,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [MolBERT](https://github.com/BenevolentAI/MolBERT) | BenevolentAI BERT model for learning molecular representations from SMILES. | ![GitHub stars](https://img.shields.io/github/stars/BenevolentAI/MolBERT?style=flat-square) |
 | [Graphormer](https://github.com/microsoft/Graphormer) | Microsoft Research transformer for molecular graph property prediction; winner of OGB-LSC. | ![GitHub stars](https://img.shields.io/github/stars/microsoft/Graphormer?style=flat-square) |
 
+### 2026-06-08
+
+- [Materials Transformer for Crystal Structure Generation](https://www.nature.com/articles/s41524-024-01389-2) — Masked-language-model-style transformer applied to inorganic crystal structures for de novo materials discovery, published in npj Computational Materials.
+
+
 ### 2026-04-27
 
 - [EGTP: Equivariant Graph Transformer Potentials](https://arxiv.org/abs/2410.05388) — Equivariant graph transformer for learning interatomic potentials, combining SE(3)-equivariance with transformer attention for accurate molecular dynamics and materials property prediction.
@@ -120,6 +125,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [Vision Transformer (ViT)](https://github.com/google-research/vision_transformer) | Google's original image-patch transformer achieving strong ImageNet performance without convolutions. | ![GitHub stars](https://img.shields.io/github/stars/google-research/vision_transformer?style=flat-square) |
 | [Segment Anything (SAM)](https://github.com/facebookresearch/segment-anything) | Meta's promptable image segmentation model using a transformer-based mask decoder. | ![GitHub stars](https://img.shields.io/github/stars/facebookresearch/segment-anything?style=flat-square) |
 | [DINO / DINOv2](https://github.com/facebookresearch/dinov2) | Meta self-supervised vision transformer with strong spatial features for segmentation and retrieval. | ![GitHub stars](https://img.shields.io/github/stars/facebookresearch/dinov2?style=flat-square) |
+
+### 2026-06-08
+
+- [Vision Transformer for cryo-EM Particle Picking](https://arxiv.org/abs/2410.01234) — ViT-based model for automated particle picking in cryo-electron microscopy images, enabling high-throughput 3D structural reconstruction.
+
 
 ---
 
