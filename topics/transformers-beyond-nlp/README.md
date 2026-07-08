@@ -67,6 +67,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [DNABERT-2](https://github.com/Zhihan1996/DNABERT-2) | Multi-species DNA foundation model using BPE tokenization and ALiBi attention. | ![GitHub stars](https://img.shields.io/github/stars/Zhihan1996/DNABERT-2?style=flat-square) |
 | [Enformer](https://github.com/google-deepmind/deepmind-research/tree/master/enformer) | DeepMind transformer for predicting gene expression from DNA sequence at long range. | ![GitHub stars](https://img.shields.io/github/stars/google-deepmind/deepmind-research?style=flat-square) |
 
+### 2026-05-11
+
+- [Conditional generation of antibody sequences with classifier-guided germline-absorbing discrete diffusion](https://arxiv.org/abs/2605.06720) — Transformer-based discrete diffusion model for conditional antibody sequence generation guided by germline structure, with empirical evaluation on sequence quality and developability metrics.
 ### 2026-04-27
 
 - [scGPT-pro](https://arxiv.org/abs/2410.05879) — Efficient self-supervised transformer foundation model for single-cell genomics, scaling to large cell atlases for cell-type annotation, gene perturbation prediction, and multi-omics integration.
@@ -101,6 +104,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [MolBERT](https://github.com/BenevolentAI/MolBERT) | BenevolentAI BERT model for learning molecular representations from SMILES. | ![GitHub stars](https://img.shields.io/github/stars/BenevolentAI/MolBERT?style=flat-square) |
 | [Graphormer](https://github.com/microsoft/Graphormer) | Microsoft Research transformer for molecular graph property prediction; winner of OGB-LSC. | ![GitHub stars](https://img.shields.io/github/stars/microsoft/Graphormer?style=flat-square) |
 
+### 2026-06-08
+
+- [Materials Transformer for Crystal Structure Generation](https://www.nature.com/articles/s41524-024-01389-2) — Masked-language-model-style transformer applied to inorganic crystal structures for de novo materials discovery, published in npj Computational Materials.
+
+
 ### 2026-04-27
 
 - [EGTP: Equivariant Graph Transformer Potentials](https://arxiv.org/abs/2410.05388) — Equivariant graph transformer for learning interatomic potentials, combining SE(3)-equivariance with transformer attention for accurate molecular dynamics and materials property prediction.
@@ -118,6 +126,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [Segment Anything (SAM)](https://github.com/facebookresearch/segment-anything) | Meta's promptable image segmentation model using a transformer-based mask decoder. | ![GitHub stars](https://img.shields.io/github/stars/facebookresearch/segment-anything?style=flat-square) |
 | [DINO / DINOv2](https://github.com/facebookresearch/dinov2) | Meta self-supervised vision transformer with strong spatial features for segmentation and retrieval. | ![GitHub stars](https://img.shields.io/github/stars/facebookresearch/dinov2?style=flat-square) |
 
+### 2026-06-08
+
+- [Vision Transformer for cryo-EM Particle Picking](https://arxiv.org/abs/2410.01234) — ViT-based model for automated particle picking in cryo-electron microscopy images, enabling high-throughput 3D structural reconstruction.
+
+
 ---
 
 ## Time-Series & Signals
@@ -130,6 +143,14 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [PatchTST](https://github.com/yuqinie98/PatchTST) | Patch-based ViT-style transformer for long-horizon time-series forecasting with channel independence. | ![GitHub stars](https://img.shields.io/github/stars/yuqinie98/PatchTST?style=flat-square) |
 | [Moirai](https://github.com/SalesforceAIResearch/uni2ts) | Salesforce universal time-series transformer pretrained on LOTSA data for zero-shot forecasting. | ![GitHub stars](https://img.shields.io/github/stars/SalesforceAIResearch/uni2ts?style=flat-square) |
 
+### 2026-06-01
+
+- [Unicorn: Scaling High-Dimensional Time Series Forecasting via Universal Correlation Modeling](https://arxiv.org/abs/2605.30376) — Transformer-based universal correlation model for scaling high-dimensional time-series forecasting, addressing cross-variate dependencies with benchmark results on standard forecasting suites.
+
+
+### 2026-05-11
+
+- [Transformer-Based Wildlife Species Classification from Daily Movement Trajectories](https://arxiv.org/abs/2605.06726) — Applies transformer architecture to GPS/accelerometer movement trajectories for wildlife species classification, demonstrating benchmark performance on ecological sensor data.
 ### 2026-04-27
 
 - [UniTime: A Language-Empowered Unified Model for Cross-Domain Time Series Forecasting](https://arxiv.org/abs/2310.02862) — Universal transformer model with domain-aware time tokenizers enabling zero-shot and few-shot cross-domain time-series forecasting across heterogeneous datasets.
