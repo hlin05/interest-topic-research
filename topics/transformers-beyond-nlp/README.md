@@ -67,6 +67,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [DNABERT-2](https://github.com/Zhihan1996/DNABERT-2) | Multi-species DNA foundation model using BPE tokenization and ALiBi attention. | ![GitHub stars](https://img.shields.io/github/stars/Zhihan1996/DNABERT-2?style=flat-square) |
 | [Enformer](https://github.com/google-deepmind/deepmind-research/tree/master/enformer) | DeepMind transformer for predicting gene expression from DNA sequence at long range. | ![GitHub stars](https://img.shields.io/github/stars/google-deepmind/deepmind-research?style=flat-square) |
 
+### 2026-05-11
+
+- [Conditional generation of antibody sequences with classifier-guided germline-absorbing discrete diffusion](https://arxiv.org/abs/2605.06720) — Transformer-based discrete diffusion model for conditional antibody sequence generation guided by germline structure, with empirical evaluation on sequence quality and developability metrics.
 ### 2026-04-27
 
 - [scGPT-pro](https://arxiv.org/abs/2410.05879) — Efficient self-supervised transformer foundation model for single-cell genomics, scaling to large cell atlases for cell-type annotation, gene perturbation prediction, and multi-omics integration.
@@ -135,6 +138,9 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 - [Unicorn: Scaling High-Dimensional Time Series Forecasting via Universal Correlation Modeling](https://arxiv.org/abs/2605.30376) — Transformer-based universal correlation model for scaling high-dimensional time-series forecasting, addressing cross-variate dependencies with benchmark results on standard forecasting suites.
 
 
+### 2026-05-11
+
+- [Transformer-Based Wildlife Species Classification from Daily Movement Trajectories](https://arxiv.org/abs/2605.06726) — Applies transformer architecture to GPS/accelerometer movement trajectories for wildlife species classification, demonstrating benchmark performance on ecological sensor data.
 ### 2026-04-27
 
 - [UniTime: A Language-Empowered Unified Model for Cross-Domain Time Series Forecasting](https://arxiv.org/abs/2310.02862) — Universal transformer model with domain-aware time tokenizers enabling zero-shot and few-shot cross-domain time-series forecasting across heterogeneous datasets.
