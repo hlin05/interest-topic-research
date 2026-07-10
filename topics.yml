@@ -151,3 +151,29 @@ topics:
       - "Stale resources unless there is a substantive new release/update in the recent window"
     max_entries_per_week: 4
     github_project: null
+
+  - id: llm-alignment-feedback-infra
+    name: "LLM Alignment & Feedback Infrastructure"
+    description: "Infrastructure for specifying desired LLM behavior (contracts, rubrics, model specs), evaluating against those specifications (LLM-as-judge, rubric scoring), and training toward them (RLAIF, Constitutional AI, scalable oversight)"
+    grok_keywords: >-
+      RLAIF, LLM-as-judge, rubric-based training, model spec, Constitutional AI,
+      scalable oversight, AI feedback loop, preference data generation,
+      LLM alignment infrastructure, reward specification
+    arxiv_feeds:
+      - { name: "cs.CL", url: "https://rss.arxiv.org/rss/cs.CL" }
+      - { name: "cs.LG", url: "https://rss.arxiv.org/rss/cs.LG" }
+      - { name: "cs.AI", url: "https://rss.arxiv.org/rss/cs.AI" }
+    inclusion_criteria:
+      min_match: 3
+      checklist:
+        - "Defines or implements a specification layer for desired LLM behavior (rubric, contract, model spec, constitution, system prompt as policy)"
+        - "Uses AI-generated feedback signals for LLM training or evaluation (RLAIF, LLM-as-judge, AI critique/revision)"
+        - "Iterative loop where specification + feedback jointly improve model outputs (not a one-shot annotation pass)"
+        - "Empirical outcome (benchmark, eval score, alignment improvement, or measurable quality gain)"
+    exclude:
+      - "RLHF applied only in agentic/multi-step task settings (covered by rlhf-agentic)"
+      - "Human-only feedback pipelines without an AI-in-the-loop component"
+      - "Social-only announcements without a primary technical source (paper/repo/blog)"
+      - "Stale resources unless there is a substantive new release/update in the recent window"
+    max_entries_per_week: 3
+    github_project: null
