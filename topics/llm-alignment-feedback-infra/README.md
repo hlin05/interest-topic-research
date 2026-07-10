@@ -22,7 +22,7 @@ A resource belongs here when it addresses the pipeline from behavior specificati
 - RLHF applied only in agentic/multi-step task settings (covered by `rlhf-agentic`)
 - Human-only feedback pipelines without an AI-in-the-loop component
 - Social-only announcements without a primary technical source (paper/repo/blog)
-- Stale resources without a substantive new release or update
+- Stale resources unless there is a substantive new release/update in the recent window
 
 ---
 
@@ -38,7 +38,7 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 - If high-confidence additions are found, the agent updates `README.md` and opens a draft PR with a supporting suggestion log.
 - If no high-confidence additions are found, the agent opens an issue log with the weekly scout outputs (instead of forcing changes).
-- The agent applies the inclusion checklist above and excludes resources without an AI-in-the-loop feedback component.
+- The agent applies the inclusion checklist above and avoids resources without an AI-in-the-loop feedback component.
 
 ---
 
@@ -153,7 +153,7 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Contributing
 
-Contributions welcome! [Open an issue](../../issues) or submit a PR.
+Contributions are welcome! To add a project or paper, simply [open an issue](../../issues) or submit a PR.
 
 When proposing additions, include a short note on which inclusion criteria the item satisfies and link the strongest supporting evidence (paper/repo/benchmark/blog).
 
