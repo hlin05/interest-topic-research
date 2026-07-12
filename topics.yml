@@ -177,3 +177,30 @@ topics:
       - "Stale resources unless there is a substantive new release/update in the recent window"
     max_entries_per_week: 3
     github_project: null
+
+  - id: llm-scalability-efficiency
+    name: "LLM Scalability & Efficiency"
+    description: "Techniques and systems for making large language models faster, cheaper, and more accessible — spanning parameter-efficient fine-tuning, compute-efficient architectures, distributed training, quantization, and high-throughput serving infrastructure"
+    grok_keywords: >-
+      LLM quantization, GPTQ, AWQ, LoRA, QLoRA, PEFT, Flash Attention, vLLM,
+      speculative decoding, PagedAttention, FSDP, tensor parallelism,
+      mixture of experts, LLM inference optimization, LLM serving throughput
+    arxiv_feeds:
+      - { name: "cs.LG", url: "https://rss.arxiv.org/rss/cs.LG" }
+      - { name: "cs.AR", url: "https://rss.arxiv.org/rss/cs.AR" }
+      - { name: "cs.DC", url: "https://rss.arxiv.org/rss/cs.DC" }
+    inclusion_criteria:
+      min_match: 3
+      checklist:
+        - "Reduces compute, memory, or latency cost of LLM training or inference through algorithmic or systems-level innovation"
+        - "Applies or evaluates a scalability technique across model sizes, hardware configurations, or deployment scenarios"
+        - "Demonstrates measurable efficiency gain (throughput, memory footprint, FLOPs, latency, or cost) with empirical evidence"
+        - "Novel contribution to parameter efficiency (PEFT/LoRA), compute efficiency (attention variants, MoE), quantization, distributed training, or serving infrastructure"
+    exclude:
+      - "Generic neural network compression without LLM-specific application or validation"
+      - "Hardware design papers without an LLM software-level efficiency contribution"
+      - "RLHF, alignment, or agentic applications (covered by other topics)"
+      - "Social-only announcements without a primary technical source (paper/repo/blog)"
+      - "Stale resources unless there is a substantive new release/update in the recent window"
+    max_entries_per_week: 4
+    github_project: null
