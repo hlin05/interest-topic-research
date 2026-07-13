@@ -195,6 +195,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Reward Modeling
 
+### 2026-07-13
+
+- [KV-PRM: Efficient Process Reward Modeling via KV-Cache Transfer for Multi-Agent Test-Time Scaling](https://arxiv.org/abs/2607.09153) — Applies process reward models to multi-agent test-time scaling using KV-cache transfer for efficiency, enabling scalable step-level reward signals across agent trajectories.
+
+
 ### 2026-03-30
 
 - [Stabilizing Rubric Integration Training via Decoupled Advantage Normalization](https://arxiv.org/abs/2603.26535) — Introduces decoupled advantage normalization to stabilize RL policy training when reward signals are derived from human-defined rubrics, improving alignment reliability in agentic settings.
