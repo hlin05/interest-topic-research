@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-07-13
+
+- [GATS: Graph-Augmented Tree Search with Layered World Models for Efficient Agent Planning](https://arxiv.org/abs/2607.08894) — Proposes a graph-augmented tree search architecture with layered world models for efficient agent planning, addressing planning orchestration, execution design, and empirical evaluation across multi-step agentic tasks.
+- [Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift](https://arxiv.org/abs/2607.09175) — Introduces a scoped verification framework for maintaining reliable agentic context evolution across long-horizon tasks under distribution shift, addressing state management, execution reliability, and iterative context refinement.
+
+
 ### 2026-06-29
 
 - [Towards Reliable and Robust LLM Planning: Symbolic Feedback-Driven Iterative Self-Refinement Framework](https://arxiv.org/abs/2606.27757) — Proposes a symbolic feedback-driven iterative self-refinement framework for LLM planning, addressing reliability, recovery loops, and structured evaluation feedback across agent execution stages.
