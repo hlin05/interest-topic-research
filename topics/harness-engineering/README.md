@@ -196,6 +196,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Safety & Constraint Infrastructure
 
+### 2026-07-20
+
+- [SeerGuard: A Safety Framework for Mobile GUI Agents via World Model Prediction](https://arxiv.org/abs/2607.15550) — Harness-layer safety framework for mobile GUI agents that uses world model prediction to anticipate and gate unsafe actions before execution, providing proactive constraint enforcement at the scaffolding level.
+
+
 ### 2026-06-15
 
 - [Capability Minimization as a Safety Primitive: Risk-Aware Causal Gating for Least-Privilege LLM Agents](https://arxiv.org/abs/2606.13884) — Proposes risk-aware causal gating to enforce least-privilege execution in LLM agents, implementing capability minimization as a harness-layer safety primitive.
@@ -216,6 +221,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ---
 
 ## Research Papers > Tool & API Integration Layers
+
+### 2026-07-20
+
+- [ToolVerse: Unlocking Massive Environments and Long-Horizon Tasks for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.15660) — Defines a large-scale execution environment and tool harness for agentic RL, providing controlled multi-tool dispatch infrastructure and long-horizon task scaffolding with empirical evaluation of agent performance.
+
 
 ### 2026-06-01
 
