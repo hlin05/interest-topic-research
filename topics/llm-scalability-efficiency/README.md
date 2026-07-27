@@ -115,6 +115,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [llama.cpp](https://github.com/ggerganov/llama.cpp) | Pure C/C++ inference for LLaMA-family models with 2–6 bit quantization (GGUF format); runs 70B models on consumer hardware. | ![GitHub stars](https://img.shields.io/github/stars/ggerganov/llama.cpp?style=flat-square) |
 | [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM) | NVIDIA's optimized inference library with in-flight batching, speculative decoding, and INT4/INT8 quantization for production GPU serving. | ![GitHub stars](https://img.shields.io/github/stars/NVIDIA/TensorRT-LLM?style=flat-square) |
 
+### 2026-07-27
+
+- [Medusa](https://github.com/FasterDecoding/Medusa) — Tree-based speculative decoding using multiple fine-tuned draft heads on the same model — achieves 2–3× inference speedup without a separate draft model.
+
+
 ---
 
 ## Research Papers
