@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-07-27
+
+- [FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills](https://arxiv.org/abs/2607.21596) — Proposes a co-evolution framework where agentic workflows and executable skills mutually adapt over time, addressing dynamic workflow architecture, tool-use lifecycle design, and iterative self-refinement with empirical evaluation.
+- [Coupled Hierarchical Search over Topology and Execution for Agentic Workflow Synthesis](https://arxiv.org/abs/2607.21609) — Introduces a coupled hierarchical search framework that jointly optimizes workflow topology and execution strategies for agentic workflow synthesis, with direct implications for orchestration design and multi-step execution planning.
+
+
 ### 2026-06-29
 
 - [Towards Reliable and Robust LLM Planning: Symbolic Feedback-Driven Iterative Self-Refinement Framework](https://arxiv.org/abs/2606.27757) — Proposes a symbolic feedback-driven iterative self-refinement framework for LLM planning, addressing reliability, recovery loops, and structured evaluation feedback across agent execution stages.
