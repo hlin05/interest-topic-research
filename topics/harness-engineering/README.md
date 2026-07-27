@@ -231,6 +231,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 - [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737) — Proposes a harness-layer framework for deciding when agents should invoke tools, optimizing tool dispatch decisions to reduce unnecessary calls and improve execution reliability.
 ## Research Papers > Context & State Management
 
+### 2026-07-27
+
+- [AgentKVShift: Efficient KV Cache Reuse for Agentic Memory Systems](https://arxiv.org/abs/2607.21604) — Proposes a harness-layer KV cache reuse mechanism for agentic memory systems, reducing redundant computation across agent steps while preserving state continuity in long-horizon execution.
+
+
 ### 2026-06-01
 
 - [Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785) — Proposes a harness-layer context management approach that adapts context handling to agent needs across long-horizon tasks, with empirical evaluation of task performance.
