@@ -249,6 +249,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Agent-Computer Interfaces & Scaffolding Design
 
+### 2026-08-03
+
+- [Model or Harness? An Interaction-Centric Taxonomy for Localizing Agent Failures](https://arxiv.org/abs/2607.28802) — Proposes an interaction-centric taxonomy for attributing agent failures to the model vs. harness layer, providing a structured framework for diagnosing scaffolding-level failure modes.
+
+
 ### 2026-06-08
 
 - [Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory](https://arxiv.org/abs/2606.06523) — Applies formal modeling and verification (Lean4) to agent workflows and execution trajectories, providing harness-layer correctness guarantees for agent execution loops and state transitions.
@@ -258,6 +263,16 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ### 2026-05-18
 
 - [SkillSmith: Compiling Agent Skills into Boundary-Guided Runtime Interfaces](https://arxiv.org/abs/2605.15215) — Compiles agent skills into constrained runtime interfaces with explicit action boundaries — a scaffolding-layer approach to constraining agent behavior at the harness level.
+
+
+
+---
+
+## Research Papers > Evaluation Harnesses
+
+### 2026-08-03
+
+- [Safety, or Just Capability? A Validity Audit of Agent-Safety Benchmarks](https://arxiv.org/abs/2607.28685) — Audits whether agent-safety evaluation harnesses actually measure safety vs. capability, providing empirical evidence that harness evaluation design choices affect the validity of safety conclusions.
 
 
 ## Contributing
