@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-08-03
+
+- [Model or Harness? An Interaction-Centric Taxonomy for Localizing Agent Failures](https://arxiv.org/abs/2607.28802) — Proposes an interaction-centric taxonomy for localizing failures in agentic systems, distinguishing model-side from harness-side failure modes to guide recovery design, observability instrumentation, and evaluation loop construction in production agents.
+- [SciToolAgent-Evo: An Ontology-Aware Self-Evolving Agent for Open-World Scientific Tool Acquisition](https://arxiv.org/abs/2607.28692) — Introduces an ontology-aware self-evolving agent architecture for open-world tool acquisition, addressing dynamic tool-use design, iterative skill refinement, and empirical evaluation of agent adaptation across novel scientific tasks.
+
+
 ### 2026-06-29
 
 - [Towards Reliable and Robust LLM Planning: Symbolic Feedback-Driven Iterative Self-Refinement Framework](https://arxiv.org/abs/2606.27757) — Proposes a symbolic feedback-driven iterative self-refinement framework for LLM planning, addressing reliability, recovery loops, and structured evaluation feedback across agent execution stages.
