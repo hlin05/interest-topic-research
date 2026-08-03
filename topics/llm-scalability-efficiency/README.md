@@ -67,6 +67,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [LoRA](https://github.com/microsoft/LoRA) | Microsoft's original low-rank adaptation implementation — fine-tunes only injected rank-decomposition matrices, reducing trainable params by 10,000×. | ![GitHub stars](https://img.shields.io/github/stars/microsoft/LoRA?style=flat-square) |
 | [Unsloth](https://github.com/unslothai/unsloth) | 2× faster LoRA/QLoRA fine-tuning with 70% less memory via hand-written Triton kernels, no custom CUDA required. | ![GitHub stars](https://img.shields.io/github/stars/unslothai/unsloth?style=flat-square) |
 
+### 2026-08-03
+
+- [LARA: Lightweight Adapters in the Residual Stream](https://arxiv.org/abs/2607.28669) — Proposes composable lightweight adapters inserted into the residual stream enabling modular multi-task adaptation with fewer parameters than standard LoRA.
+
+
 ---
 
 ## Compute-Efficient Architectures
@@ -78,6 +83,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [FlashAttention](https://github.com/Dao-AILab/flash-attention) | IO-aware exact attention that is 2–4× faster and uses 5–20× less memory than standard attention via tiling and kernel fusion. | ![GitHub stars](https://img.shields.io/github/stars/Dao-AILab/flash-attention?style=flat-square) |
 | [Mixtral (MoE)](https://github.com/mistralai/mistral-inference) | Mistral's mixture-of-experts implementation — 8 experts per token, only 2 active, delivering 7B-param inference cost at 45B-param quality. | ![GitHub stars](https://img.shields.io/github/stars/mistralai/mistral-inference?style=flat-square) |
 | [xFormers](https://github.com/facebookresearch/xformers) | Meta's modular transformer library with memory-efficient attention, sparse attention, and optimized building blocks for custom architectures. | ![GitHub stars](https://img.shields.io/github/stars/facebookresearch/xformers?style=flat-square) |
+
+### 2026-08-03
+
+- [FlashAttention-3](https://arxiv.org/abs/2407.08608) — Third-generation IO-aware attention kernel exploiting NVIDIA Hopper architecture features (TMA, WGMMA, FP8) to reach ~75% of H100 peak FLOPs — roughly 2× faster than FlashAttention-2.
+
 
 ---
 
