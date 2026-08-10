@@ -143,6 +143,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [PatchTST](https://github.com/yuqinie98/PatchTST) | Patch-based ViT-style transformer for long-horizon time-series forecasting with channel independence. | ![GitHub stars](https://img.shields.io/github/stars/yuqinie98/PatchTST?style=flat-square) |
 | [Moirai](https://github.com/SalesforceAIResearch/uni2ts) | Salesforce universal time-series transformer pretrained on LOTSA data for zero-shot forecasting. | ![GitHub stars](https://img.shields.io/github/stars/SalesforceAIResearch/uni2ts?style=flat-square) |
 
+### 2026-08-10
+
+- [MiGHT-EHR: A Multi-task Graph Transformer for Heterogeneous Temporal Electronic Health Records](https://arxiv.org/abs/2608.06430) — Multi-task graph transformer operating on heterogeneous temporal EHR data for clinical prediction tasks, combining graph structure with transformer attention over patient timelines.
+
+
 ### 2026-06-01
 
 - [Unicorn: Scaling High-Dimensional Time Series Forecasting via Universal Correlation Modeling](https://arxiv.org/abs/2605.30376) — Transformer-based universal correlation model for scaling high-dimensional time-series forecasting, addressing cross-variate dependencies with benchmark results on standard forecasting suites.
