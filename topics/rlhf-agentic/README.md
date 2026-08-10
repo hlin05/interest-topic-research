@@ -188,6 +188,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | UltraFeedback | Large-scale preference dataset (64K instructions, 256K responses) with GPT-4 scoring for DPO/RLHF training. | [Dataset](https://huggingface.co/datasets/openbmb/UltraFeedback) |
 | WebArena | Realistic web-based agent benchmark where RLHF-trained agents are evaluated on long-horizon tasks. | [Paper](https://arxiv.org/abs/2307.13854) \| [GitHub](https://github.com/web-arena-x/webarena) |
 
+### 2026-08-10
+
+- [TRACE: A Multi-Layer Benchmark for Human AI Controller Coordination Under Drift and Failure](https://arxiv.org/abs/2608.06657) — Multi-layer benchmark evaluating human-AI controller coordination in agentic settings subject to distribution drift and failure modes, providing structured evaluation of human-in-the-loop agent alignment.
+
+
 ---
 
 
@@ -214,6 +219,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ---
 
 ## Research Papers > RLHF for Agentic Systems
+
+### 2026-08-10
+
+- [WebGrader: Training LLMs for Web Development with Self-Evolving Programmatic Grader](https://arxiv.org/abs/2608.06474) — Trains LLM agents on web development tasks using a self-evolving programmatic grader that iteratively refines reward signals from verifiable task outcomes, enabling scalable alignment without manual human annotation at each step.
+
 
 ### 2026-06-01
 
