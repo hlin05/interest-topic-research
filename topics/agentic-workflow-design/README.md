@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-08-10
+
+- [ADIAS: Automated Design of Interactive Agentic Systems](https://arxiv.org/abs/2608.06410) — Proposes automated design methods for interactive agentic systems, addressing orchestration patterns, tool-use integration, and evaluation loop design across the agent lifecycle.
+- [TRACE: A Multi-Layer Benchmark for Human AI Controller Coordination Under Drift and Failure](https://arxiv.org/abs/2608.06657) — Introduces a multi-layer benchmark for evaluating human-AI coordination under operational drift and failure conditions, providing empirical grounding for human-in-the-loop design and failure recovery patterns in agentic workflows.
+
+
 ### 2026-06-29
 
 - [Towards Reliable and Robust LLM Planning: Symbolic Feedback-Driven Iterative Self-Refinement Framework](https://arxiv.org/abs/2606.27757) — Proposes a symbolic feedback-driven iterative self-refinement framework for LLM planning, addressing reliability, recovery loops, and structured evaluation feedback across agent execution stages.
