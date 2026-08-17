@@ -249,6 +249,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Agent-Computer Interfaces & Scaffolding Design
 
+### 2026-08-17
+
+- [Agentao: A Governed Local-First Runtime for Tool-Using LLM Agents](https://arxiv.org/abs/2608.13574) — Proposes a governed local-first runtime for tool-using LLM agents, implementing execution loop management, tool dispatch, and governance constraints at the harness layer.
+
+
 ### 2026-06-08
 
 - [Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory](https://arxiv.org/abs/2606.06523) — Applies formal modeling and verification (Lean4) to agent workflows and execution trajectories, providing harness-layer correctness guarantees for agent execution loops and state transitions.
@@ -258,6 +263,16 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ### 2026-05-18
 
 - [SkillSmith: Compiling Agent Skills into Boundary-Guided Runtime Interfaces](https://arxiv.org/abs/2605.15215) — Compiles agent skills into constrained runtime interfaces with explicit action boundaries — a scaffolding-layer approach to constraining agent behavior at the harness level.
+
+
+
+---
+
+## Research Papers > Evaluation Harness Design
+
+### 2026-08-17
+
+- [Evaluating Agentic Learning Harness Capabilities Without Labels via the Scaling Hypothesis](https://arxiv.org/abs/2608.13608) — Proposes a label-free methodology for evaluating agentic learning harness capabilities using the scaling hypothesis, advancing harness-mediated agent evaluation without ground-truth supervision.
 
 
 ## Contributing
