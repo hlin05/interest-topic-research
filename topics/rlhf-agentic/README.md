@@ -195,6 +195,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 ## Research Papers > Reward Modeling
 
+### 2026-08-17
+
+- [Inducing Reward-Free Judging Rubrics that Reduce Over-Crediting in Agent Evaluation](https://arxiv.org/abs/2608.13564) — Proposes methods to induce reward-free judging rubrics for agent evaluation that reduce over-crediting bias, improving the reliability of reward signals used to assess and align agentic behavior.
+
+
 ### 2026-03-30
 
 - [Stabilizing Rubric Integration Training via Decoupled Advantage Normalization](https://arxiv.org/abs/2603.26535) — Introduces decoupled advantage normalization to stabilize RL policy training when reward signals are derived from human-defined rubrics, improving alignment reliability in agentic settings.
