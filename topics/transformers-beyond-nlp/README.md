@@ -87,6 +87,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [OpenFold](https://github.com/aqlaboratory/openfold) | Open-source reimplementation of AlphaFold2's Evoformer transformer for structure prediction. | ![GitHub stars](https://img.shields.io/github/stars/aqlaboratory/openfold?style=flat-square) |
 | [Uni-Mol](https://github.com/deepmodeling/Uni-Mol) | DPTECH universal molecular transformer pretrained on 3D conformations for property prediction and docking. | ![GitHub stars](https://img.shields.io/github/stars/deepmodeling/Uni-Mol?style=flat-square) |
 
+### 2026-08-17
+
+- [ProtGPT2: Deep Unsupervised Language Model for Protein Design](https://www.nature.com/articles/s41587-022-01398-9) — GPT-2-style autoregressive transformer trained on UniRef50 for de novo protein sequence generation, producing sequences with natural-like structural properties.
+
+
 ### 2026-04-27
 
 - [ProteinNPT](https://arxiv.org/abs/2410.00149) — Combines transformers with normalizing flows for property-conditioned protein sequence generation, enabling controllable design of proteins with target fitness or stability profiles.
@@ -142,6 +147,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [Time-Series Library (TSLib)](https://github.com/thuml/Time-Series-Library) | Tsinghua benchmark suite covering transformer-based time-series forecasting models (PatchTST, iTransformer, etc.). | ![GitHub stars](https://img.shields.io/github/stars/thuml/Time-Series-Library?style=flat-square) |
 | [PatchTST](https://github.com/yuqinie98/PatchTST) | Patch-based ViT-style transformer for long-horizon time-series forecasting with channel independence. | ![GitHub stars](https://img.shields.io/github/stars/yuqinie98/PatchTST?style=flat-square) |
 | [Moirai](https://github.com/SalesforceAIResearch/uni2ts) | Salesforce universal time-series transformer pretrained on LOTSA data for zero-shot forecasting. | ![GitHub stars](https://img.shields.io/github/stars/SalesforceAIResearch/uni2ts?style=flat-square) |
+
+### 2026-08-17
+
+- [EEG-PRISM: Physiologically-Grounded Interpretability of EEG Foundation Models](https://arxiv.org/abs/2608.13676) — Transformer-based EEG foundation model with physiologically-grounded interpretability framework for brain signal classification and analysis.
+
 
 ### 2026-06-01
 
