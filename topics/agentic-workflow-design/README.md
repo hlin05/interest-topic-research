@@ -59,6 +59,12 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 
 *Coming soon — populated by the weekly Research Assistant Agent.*
 
+### 2026-08-17
+
+- [Agentao: A Governed Local-First Runtime for Tool-Using LLM Agents](https://arxiv.org/abs/2608.13574) — Presents a governed, local-first runtime architecture for tool-using LLM agents, addressing execution lifecycle management, tool-use design, and production deployment constraints.
+- [Measuring Cross-Task Behavioral Consistency in Language Model Agents](https://arxiv.org/abs/2608.13598) — Empirical study measuring behavioral consistency of LLM agents across diverse tasks, providing grounding for evaluation loop design and reliability practices in agentic workflows.
+
+
 ### 2026-06-29
 
 - [Towards Reliable and Robust LLM Planning: Symbolic Feedback-Driven Iterative Self-Refinement Framework](https://arxiv.org/abs/2606.27757) — Proposes a symbolic feedback-driven iterative self-refinement framework for LLM planning, addressing reliability, recovery loops, and structured evaluation feedback across agent execution stages.
