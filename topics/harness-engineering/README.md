@@ -94,6 +94,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 | [MLE-bench](https://github.com/openai/mle-bench) | Harness running agents against 75 Kaggle competitions in isolated Docker environments with metric validation. | ![GitHub stars](https://img.shields.io/github/stars/openai/mle-bench?style=flat-square) |
 | [WebArena](https://github.com/web-arena-x/webarena) | Self-hosted web environment harness with deterministic task replay for evaluating browser-using agents. | ![GitHub stars](https://img.shields.io/github/stars/web-arena-x/webarena?style=flat-square) |
 
+### 2026-07-13
+
+- [Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading](https://arxiv.org/abs/2607.08964) — Evaluation harness for long-horizon terminal-task agents with sandboxed execution environments and dense reward-based grading for fine-grained behavioral assessment.
+
+
 ### 2026-06-15
 
 - [WorkBench Revisited: Workplace Agents Two Years On](https://arxiv.org/abs/2606.13715) — Longitudinal re-evaluation of workplace agent benchmarks two years on, assessing how evaluation harness design and agent capabilities have evolved.
@@ -231,6 +236,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 - [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737) — Proposes a harness-layer framework for deciding when agents should invoke tools, optimizing tool dispatch decisions to reduce unnecessary calls and improve execution reliability.
 ## Research Papers > Context & State Management
 
+### 2026-07-13
+
+- [Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift](https://arxiv.org/abs/2607.09175) — Proposes scoped verification mechanisms for managing agentic context state evolution across long-horizon tasks under distribution shift, with reliability evidence at the harness layer.
+
+
 ### 2026-06-01
 
 - [Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785) — Proposes a harness-layer context management approach that adapts context handling to agent needs across long-horizon tasks, with empirical evaluation of task performance.
@@ -248,6 +258,11 @@ This repository runs a weekly **Research Assistant Agent** via GitHub Actions to
 ---
 
 ## Research Papers > Agent-Computer Interfaces & Scaffolding Design
+
+### 2026-07-13
+
+- [CogniConsole: Externalizing Inference-Time Control as a Formal Abstraction for Reliable LLM Interactions](https://arxiv.org/abs/2607.08774) — Formalizes inference-time control as an explicit harness-layer abstraction, externalizing execution control from the model to improve reliability of LLM interactions.
+
 
 ### 2026-06-08
 
